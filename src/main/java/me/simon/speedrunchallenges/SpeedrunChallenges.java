@@ -81,6 +81,7 @@ public final class SpeedrunChallenges extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new DeathChallengeListener(this),this);
         getServer().getPluginManager().registerEvents(new PlayerDeathCountListener(this), this);
         getServer().getPluginManager().registerEvents(new BlockHuntListener(this), this);
+        getServer().getPluginManager().registerEvents(new OreChallengeListener(this), this);
 
         // Ajout des commandes
         getCommand("challenge").setExecutor(new ChallengeCommand(this));

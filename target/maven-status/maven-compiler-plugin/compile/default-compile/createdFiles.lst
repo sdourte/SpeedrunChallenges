@@ -23,9 +23,11 @@ me\simon\speedrunchallenges\game\GameManager$1.class
 me\simon\speedrunchallenges\gui\ChallengeMenu.class
 me\simon\speedrunchallenges\game\GameState.class
 me\simon\speedrunchallenges\utils\TimeUtils.class
+me\simon\speedrunchallenges\challenges\OreChallenge.class
 me\simon\speedrunchallenges\listeners\LobbyProtectionListener.class
 me\simon\speedrunchallenges\commands\SetLobbyCommand.class
 me\simon\speedrunchallenges\listeners\AnyMobListener.class
+me\simon\speedrunchallenges\listeners\OreChallengeListener.class
 me\simon\speedrunchallenges\challenges\AdvancementChallenge.class
 me\simon\speedrunchallenges\challenges\BlockHuntChallenge.class
 me\simon\speedrunchallenges\challenges\DiamondChallenge.class

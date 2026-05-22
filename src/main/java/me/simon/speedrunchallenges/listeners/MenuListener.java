@@ -177,6 +177,20 @@ public class MenuListener implements Listener {
         }
 
         /*
+         * Block Hunt Challenge
+         */
+        else if (event.getCurrentItem().getType() == Material.DIAMOND_ORE) {
+
+            plugin.getGameManager().setActiveChallenge(
+                    new OreChallenge(plugin)
+            );
+
+            Bukkit.broadcastMessage(
+                    "§aOre Challenge sélectionné !"
+            );
+        }
+
+        /*
          * Ferme le menu
          */
         player.closeInventory();

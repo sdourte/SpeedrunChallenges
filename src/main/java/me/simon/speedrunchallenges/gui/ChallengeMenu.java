@@ -32,7 +32,7 @@ public class ChallengeMenu {
          */
         Inventory inventory = Bukkit.createInventory(
                 null,
-                9,
+                18,
                 "Choix du challenge"
         );
 
@@ -137,9 +137,23 @@ public class ChallengeMenu {
 
         if (blockHuntMeta != null) {
 
-            blockHuntMeta.setDisplayName("§gBlock Hunt Challenge");
+            blockHuntMeta.setDisplayName("§aBlock Hunt Challenge");
 
             blockHuntItem.setItemMeta(blockHuntMeta);
+        }
+
+        /*
+         * Ore Challenge
+         */
+        ItemStack oreChallengeItem = new ItemStack(Material.DIAMOND_ORE);
+
+        ItemMeta oreChallengeMeta = oreChallengeItem.getItemMeta();
+
+        if (oreChallengeMeta != null) {
+
+            oreChallengeMeta.setDisplayName("§bOre Challenge");
+
+            oreChallengeItem.setItemMeta(oreChallengeMeta);
         }
 
         /*
@@ -152,6 +166,7 @@ public class ChallengeMenu {
         inventory.setItem(4, deathSwapItem);
         inventory.setItem(5, deathChallengeItem);
         inventory.setItem(6, blockHuntItem);
+        inventory.setItem(7, oreChallengeItem);
 
         /*
          * Ouvre le menu au joueur

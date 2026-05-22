@@ -138,6 +138,12 @@ public class TranslationManager {
 
             case EMERALD_ORE -> "Minerai d'émeraude";
 
+            case COPPER_ORE -> "Minerai de cuivre";
+
+            case NETHER_GOLD_ORE -> "Minerai d'or du Nether";
+
+            case NETHER_QUARTZ_ORE -> "Minerai de quartz";
+
             case OBSIDIAN -> "Obsidienne";
 
             case GLASS -> "Verre";
