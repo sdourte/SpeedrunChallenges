@@ -129,6 +129,20 @@ public class ChallengeMenu {
         }
 
         /*
+         * Block Hunt Challenge
+         */
+        ItemStack blockHuntItem = new ItemStack(Material.DIRT);
+
+        ItemMeta blockHuntMeta = blockHuntItem.getItemMeta();
+
+        if (blockHuntMeta != null) {
+
+            blockHuntMeta.setDisplayName("§gBlock Hunt Challenge");
+
+            blockHuntItem.setItemMeta(blockHuntMeta);
+        }
+
+        /*
          * Placement des items
          */
         inventory.setItem(0, diamondItem);
@@ -137,6 +151,7 @@ public class ChallengeMenu {
         inventory.setItem(3, advancementItem);
         inventory.setItem(4, deathSwapItem);
         inventory.setItem(5, deathChallengeItem);
+        inventory.setItem(6, blockHuntItem);
 
         /*
          * Ouvre le menu au joueur

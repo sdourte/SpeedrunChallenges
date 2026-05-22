@@ -163,6 +163,20 @@ public class MenuListener implements Listener {
         }
 
         /*
+         * Block Hunt Challenge
+         */
+        else if (event.getCurrentItem().getType() == Material.DIRT) {
+
+            plugin.getGameManager().setActiveChallenge(
+                    new BlockHuntChallenge(plugin)
+            );
+
+            Bukkit.broadcastMessage(
+                    "§aBlock Hunt Challenge sélectionné !"
+            );
+        }
+
+        /*
          * Ferme le menu
          */
         player.closeInventory();

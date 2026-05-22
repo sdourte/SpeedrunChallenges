@@ -7,6 +7,7 @@ me\simon\speedrunchallenges\challenges\DeathSwapChallenge.class
 me\simon\speedrunchallenges\listeners\DeathChallengeListener.class
 me\simon\speedrunchallenges\managers\TeleportManager.class
 me\simon\speedrunchallenges\game\GameManager$2.class
+me\simon\speedrunchallenges\listeners\BlockHuntListener.class
 me\simon\speedrunchallenges\challenges\AnyMobChallenge.class
 me\simon\speedrunchallenges\game\GameManager$1$1.class
 me\simon\speedrunchallenges\challenges\DeathSwapChallenge$1.class
@@ -14,6 +15,7 @@ me\simon\speedrunchallenges\commands\ChallengeCommand.class
 me\simon\speedrunchallenges\commands\RemoveLobbyCommand.class
 me\simon\speedrunchallenges\managers\LobbyManager.class
 me\simon\speedrunchallenges\challenges\MobKillChallenge.class
+me\simon\speedrunchallenges\managers\TranslationManager$1.class
 me\simon\speedrunchallenges\listeners\DiamondListener.class
 me\simon\speedrunchallenges\listeners\MenuListener.class
 me\simon\speedrunchallenges\challenges\DeathChallenge.class
@@ -25,6 +27,7 @@ me\simon\speedrunchallenges\listeners\LobbyProtectionListener.class
 me\simon\speedrunchallenges\commands\SetLobbyCommand.class
 me\simon\speedrunchallenges\listeners\AnyMobListener.class
 me\simon\speedrunchallenges\challenges\AdvancementChallenge.class
+me\simon\speedrunchallenges\challenges\BlockHuntChallenge.class
 me\simon\speedrunchallenges\challenges\DiamondChallenge.class
 me\simon\speedrunchallenges\listeners\MobKillListener.class
 me\simon\speedrunchallenges\managers\TranslationManager.class

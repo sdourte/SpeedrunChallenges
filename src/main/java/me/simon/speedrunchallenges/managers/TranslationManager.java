@@ -1,5 +1,6 @@
 package me.simon.speedrunchallenges.managers;
 
+import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 
 import java.util.HashMap;
@@ -114,5 +115,48 @@ public class TranslationManager {
                 entityType,
                 entityType.name()
         );
+    }
+
+    public String getBlockName(Material material) {
+
+        return switch (material) {
+
+            case OAK_LOG -> "Bûche de chêne";
+
+            case STONE -> "Pierre";
+            case COBBLESTONE -> "Pierre taillée";
+
+            case COAL_ORE -> "Minerai de charbon";
+            case IRON_ORE -> "Minerai de fer";
+            case GOLD_ORE -> "Minerai d'or";
+
+            case REDSTONE_ORE -> "Minerai de redstone";
+
+            case LAPIS_ORE -> "Minerai de lapis";
+
+            case DIAMOND_ORE -> "Minerai de diamant";
+
+            case EMERALD_ORE -> "Minerai d'émeraude";
+
+            case OBSIDIAN -> "Obsidienne";
+
+            case GLASS -> "Verre";
+
+            case BOOKSHELF -> "Bibliothèque";
+
+            case HAY_BLOCK -> "Botte de foin";
+
+            case TNT -> "TNT";
+
+            case NETHERRACK -> "Netherrack";
+
+            case SOUL_SAND -> "Sable des âmes";
+
+            case ANCIENT_DEBRIS -> "Débris antiques";
+
+            case END_STONE -> "Pierre de l'End";
+
+            default -> material.name();
+        };
     }
 }
