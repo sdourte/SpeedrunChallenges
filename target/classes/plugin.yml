@@ -1,0 +1,19 @@
+name: SpeedrunChallenges
+version: '1.0-SNAPSHOT'
+
+main: me.simon.speedrunchallenges.SpeedrunChallenges
+api-version: '1.21.11'
+load: POSTWORLD
+
+commands:
+  challenge:
+    description: Permet de choisir un challenge
+
+  setlobby:
+    description: Définit le lobby
+
+  removelobby:
+    description: Supprime le lobby
+
+  stopchallenge:
+    description: Stop le challenge actuel
