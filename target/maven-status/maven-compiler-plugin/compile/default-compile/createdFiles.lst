@@ -1,4 +1,5 @@
 me\simon\speedrunchallenges\challenges\Challenge.class
+me\simon\speedrunchallenges\listeners\DamageChallengeListener.class
 me\simon\speedrunchallenges\listeners\PlayerDeathCountListener.class
 me\simon\speedrunchallenges\listeners\DeathSwapListener.class
 me\simon\speedrunchallenges\managers\TeleportManager.class
@@ -18,6 +19,7 @@ me\simon\speedrunchallenges\listeners\OreChallengeListener.class
 me\simon\speedrunchallenges\listeners\XPChallengeListener.class
 me\simon\speedrunchallenges\challenges\AdvancementChallenge.class
 me\simon\speedrunchallenges\challenges\BlockHuntChallenge.class
+me\simon\speedrunchallenges\challenges\DamageChallenge$1.class
 me\simon\speedrunchallenges\challenges\DiamondChallenge.class
 me\simon\speedrunchallenges\listeners\MobKillListener.class
 me\simon\speedrunchallenges\managers\TranslationManager.class
@@ -39,6 +41,7 @@ me\simon\speedrunchallenges\challenges\DimensionRaceChallenge$1.class
 me\simon\speedrunchallenges\managers\LobbyManager.class
 me\simon\speedrunchallenges\gui\DimensionMenu.class
 me\simon\speedrunchallenges\listeners\DiamondListener.class
+me\simon\speedrunchallenges\challenges\DamageChallenge.class
 me\simon\speedrunchallenges\challenges\DeathChallenge.class
 me\simon\speedrunchallenges\challenges\DimensionMode.class
 me\simon\speedrunchallenges\game\GameManager$1.class

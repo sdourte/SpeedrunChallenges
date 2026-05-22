@@ -199,6 +199,20 @@ public class ChallengeMenu {
         }
 
         /*
+         * Damage Challenge
+         */
+        ItemStack damageChallengeItem = new ItemStack(Material.CACTUS);
+
+        ItemMeta damageChallengeMeta = damageChallengeItem.getItemMeta();
+
+        if (damageChallengeMeta != null) {
+
+            damageChallengeMeta.setDisplayName("§fDamage Challenge");
+
+            damageChallengeItem.setItemMeta(damageChallengeMeta);
+        }
+
+        /*
          * Placement des items
          */
         inventory.setItem(0, diamondItem);
@@ -212,6 +226,7 @@ public class ChallengeMenu {
         inventory.setItem(8, randomItemChallengeItem);
         inventory.setItem(9, xpChallengeItem);
         inventory.setItem(10, dimensionRaceItem);
+        inventory.setItem(11, damageChallengeItem);
 
         /*
          * Ouvre le menu au joueur

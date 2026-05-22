@@ -301,6 +301,20 @@ public class MenuListener implements Listener {
         }
 
         /*
+         * Damage Challenge
+         */
+        else if (event.getCurrentItem().getType() == Material.CACTUS) {
+
+            plugin.getGameManager().setActiveChallenge(
+                    new DamageChallenge(plugin)
+            );
+
+            Bukkit.broadcastMessage(
+                    "§aDamage Challenge sélectionné !"
+            );
+        }
+
+        /*
          * Ferme le menu
          */
         player.closeInventory();

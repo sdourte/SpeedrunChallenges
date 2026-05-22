@@ -2,6 +2,7 @@ C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\s
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\challenges\AnyMobChallenge.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\challenges\BlockHuntChallenge.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\challenges\Challenge.java
+C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\challenges\DamageChallenge.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\challenges\DeathChallenge.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\challenges\DeathSwapChallenge.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\challenges\DiamondChallenge.java
@@ -22,6 +23,7 @@ C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\s
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\listeners\AdvancementListener.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\listeners\AnyMobListener.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\listeners\BlockHuntListener.java
+C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\listeners\DamageChallengeListener.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\listeners\DeathChallengeListener.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\listeners\DeathSwapListener.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\listeners\DiamondListener.java
