@@ -43,7 +43,16 @@ public class RandomItemListener implements Listener {
             return;
         }
 
-        checkWin(player);
+        /*
+         * Delay d'1 tick :
+         * l'item doit être
+         * réellement ajouté.
+         */
+        Bukkit.getScheduler().runTaskLater(
+                plugin,
+                () -> checkWin(player),
+                1L
+        );
     }
 
     /*
