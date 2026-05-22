@@ -17,3 +17,6 @@ commands:
 
   stopchallenge:
     description: Stop le challenge actuel
+
+  resetworld:
+    description: Reset le monde

@@ -2,6 +2,7 @@ package me.simon.speedrunchallenges.managers;
 
 import me.simon.speedrunchallenges.SpeedrunChallenges;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 
@@ -30,7 +31,17 @@ public class TeleportManager {
      */
     public void teleportRandom(Player player) {
 
-        World world = player.getWorld();
+        // On récupère le monde normal >< world_lobby
+        World world = Bukkit.getWorld("world");
+        // Sécurité
+        if (world == null) {
+
+            Bukkit.broadcastMessage(
+                    "§cLe monde principal est introuvable."
+            );
+
+            return;
+        }
 
         /*
          * Rayon maximal de téléportation.

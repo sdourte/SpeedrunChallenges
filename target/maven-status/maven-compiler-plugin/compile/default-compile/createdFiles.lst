@@ -11,6 +11,7 @@ me\simon\speedrunchallenges\challenges\MobKillChallenge.class
 me\simon\speedrunchallenges\managers\TranslationManager$1.class
 me\simon\speedrunchallenges\listeners\MenuListener.class
 me\simon\speedrunchallenges\challenges\DimensionRaceChallenge.class
+me\simon\speedrunchallenges\commands\ResetWorldCommand.class
 me\simon\speedrunchallenges\utils\TimeUtils.class
 me\simon\speedrunchallenges\challenges\OreChallenge.class
 me\simon\speedrunchallenges\commands\SetLobbyCommand.class

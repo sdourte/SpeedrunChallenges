@@ -92,6 +92,7 @@ public final class SpeedrunChallenges extends JavaPlugin {
         getCommand("setlobby").setExecutor(new SetLobbyCommand(this));
         getCommand("removelobby").setExecutor(new RemoveLobbyCommand(this));
         getCommand("stopchallenge").setExecutor(new StopChallengeCommand(this));
+        getCommand("resetworld").setExecutor(new ResetWorldCommand(this));
     }
 
 
