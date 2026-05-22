@@ -6,6 +6,7 @@ import me.simon.speedrunchallenges.challenges.*;
 
 import me.simon.speedrunchallenges.game.GameState;
 
+import me.simon.speedrunchallenges.gui.DimensionMenu;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 
@@ -29,9 +30,12 @@ public class MenuListener implements Listener {
     public void onMenuClick(InventoryClickEvent event) {
 
         /*
-         * Vérifie le nom du menu
+         * Vérifie les menus gérés.
          */
-        if (!event.getView().getTitle().equals("Choix du challenge")) {
+        if (!event.getView().getTitle().equals("Choix du challenge")
+                // Pour Race Dimension
+                && !event.getView().getTitle().equals("Choix dimension")) {
+
             return;
         }
 
@@ -216,6 +220,84 @@ public class MenuListener implements Listener {
             Bukkit.broadcastMessage(
                     "§aXP Challenge sélectionné !"
             );
+        }
+
+        /*
+         * Dimension Race Challenge
+         */
+        else if (event.getCurrentItem().getType()
+                == Material.OBSIDIAN) {
+
+            /*
+             * Ouvre le sous-menu
+             * de sélection dimension.
+             */
+            player.openInventory(
+                    DimensionMenu.createMenu()
+            );
+
+            return;
+        }
+
+        /*
+         * Menu dimensions (Dimension Race Challenge)
+         */
+        if (event.getView().getTitle()
+                .equals("Choix dimension")) {
+
+            event.setCancelled(true);
+
+            if (event.getCurrentItem() == null) {
+                return;
+            }
+
+            /*
+             * Nether.
+             */
+            if (event.getCurrentItem().getType()
+                    == Material.NETHERRACK) {
+
+                plugin.getGameManager().setActiveChallenge(
+                        new DimensionRaceChallenge(
+                                plugin,
+                                DimensionMode.NETHER
+                        )
+                );
+            }
+
+            /*
+             * End.
+             */
+            else if (event.getCurrentItem().getType()
+                    == Material.ENDER_EYE) {
+
+                plugin.getGameManager().setActiveChallenge(
+                        new DimensionRaceChallenge(
+                                plugin,
+                                DimensionMode.END
+                        )
+                );
+            }
+
+            /*
+             * Random.
+             */
+            else if (event.getCurrentItem().getType()
+                    == Material.AMETHYST_SHARD) {
+
+                plugin.getGameManager().setActiveChallenge(
+                        new DimensionRaceChallenge(
+                                plugin,
+                                DimensionMode.RANDOM
+                        )
+                );
+            }
+
+            player.closeInventory();
+
+            plugin.getGameManager().startCountdown();
+
+            return;
         }
 
         /*

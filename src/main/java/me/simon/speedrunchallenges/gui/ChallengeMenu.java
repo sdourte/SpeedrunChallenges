@@ -185,6 +185,20 @@ public class ChallengeMenu {
         }
 
         /*
+         * Dimension Race Challenge
+         */
+        ItemStack dimensionRaceItem = new ItemStack(Material.OBSIDIAN);
+
+        ItemMeta dimensionRaceMeta = dimensionRaceItem.getItemMeta();
+
+        if (dimensionRaceMeta != null) {
+
+            dimensionRaceMeta.setDisplayName("§eDimension Race Challenge");
+
+            dimensionRaceItem.setItemMeta(dimensionRaceMeta);
+        }
+
+        /*
          * Placement des items
          */
         inventory.setItem(0, diamondItem);
@@ -197,6 +211,7 @@ public class ChallengeMenu {
         inventory.setItem(7, oreChallengeItem);
         inventory.setItem(8, randomItemChallengeItem);
         inventory.setItem(9, xpChallengeItem);
+        inventory.setItem(10, dimensionRaceItem);
 
         /*
          * Ouvre le menu au joueur
