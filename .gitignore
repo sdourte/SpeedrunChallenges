@@ -1,0 +1,21 @@
+# Gradle
+.gradle/
+build/
+
+# IntelliJ / VSCode
+.idea/
+*.iml
+.vscode/
+
+# Logs
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Minecraft
+run/
+world/
+world_nether/
+world_the_end/
