@@ -1,6 +1,8 @@
 me\simon\speedrunchallenges\challenges\Challenge.class
 me\simon\speedrunchallenges\game\GameManager.class
 me\simon\speedrunchallenges\listeners\PlayerDeathCountListener.class
+me\simon\speedrunchallenges\listeners\RandomItemListener.class
+me\simon\speedrunchallenges\challenges\RandomItemChallenge.class
 me\simon\speedrunchallenges\listeners\DeathSwapListener.class
 me\simon\speedrunchallenges\challenges\DeathChallenge$1.class
 me\simon\speedrunchallenges\challenges\DeathSwapChallenge.class

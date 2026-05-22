@@ -157,6 +157,20 @@ public class ChallengeMenu {
         }
 
         /*
+         * Random Item Challenge
+         */
+        ItemStack randomItemChallengeItem = new ItemStack(Material.STICK);
+
+        ItemMeta randomItemChallengeMeta = randomItemChallengeItem.getItemMeta();
+
+        if (randomItemChallengeMeta != null) {
+
+            randomItemChallengeMeta.setDisplayName("§cRandom Item Challenge");
+
+            randomItemChallengeItem.setItemMeta(randomItemChallengeMeta);
+        }
+
+        /*
          * Placement des items
          */
         inventory.setItem(0, diamondItem);
@@ -167,6 +181,7 @@ public class ChallengeMenu {
         inventory.setItem(5, deathChallengeItem);
         inventory.setItem(6, blockHuntItem);
         inventory.setItem(7, oreChallengeItem);
+        inventory.setItem(8, randomItemChallengeItem);
 
         /*
          * Ouvre le menu au joueur

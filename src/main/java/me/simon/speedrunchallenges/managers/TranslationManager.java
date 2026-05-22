@@ -165,4 +165,205 @@ public class TranslationManager {
             default -> material.name();
         };
     }
+
+    public String getItemName(Material material) {
+
+        return switch (material) {
+
+            /*
+             * =========================
+             * CRAFTABLES SIMPLES
+             * =========================
+             */
+
+            case BUCKET -> "Seau";
+
+            case COMPASS -> "Boussole";
+
+            case CLOCK -> "Horloge";
+
+            case SHIELD -> "Bouclier";
+
+            case SHEARS -> "Cisailles";
+
+            case RED_BED -> "Lit rouge";
+            case BLUE_BED -> "Lit bleu";
+            case GREEN_BED -> "Lit vert";
+            case YELLOW_BED -> "Lit jaune";
+
+            case TNT -> "TNT";
+
+            case BOOKSHELF -> "Bibliothèque";
+
+            case CROSSBOW -> "Arbalète";
+
+            case BOW -> "Arc";
+
+            case FISHING_ROD -> "Canne à pêche";
+
+            case HOPPER -> "Entonnoir";
+
+            case MINECART -> "Wagonnet";
+
+            case LANTERN -> "Lanterne";
+
+            case ITEM_FRAME -> "Cadre";
+
+            case CAMPFIRE -> "Feu de camp";
+
+            case BLAST_FURNACE -> "Haut fourneau";
+
+            case SMOKER -> "Fumoir";
+
+            case CARTOGRAPHY_TABLE -> "Table de cartographie";
+
+            case FLETCHING_TABLE -> "Table d'archerie";
+
+            case SMITHING_TABLE -> "Table de forge";
+
+            case BREWING_STAND -> "Alambic";
+
+            case ANVIL -> "Enclume";
+
+            case CAULDRON -> "Chaudron";
+
+            case OBSERVER -> "Observateur";
+
+            case PISTON -> "Piston";
+
+            case STICKY_PISTON -> "Piston collant";
+
+            case REPEATER -> "Répéteur";
+
+            case COMPARATOR -> "Comparateur";
+
+            case DAYLIGHT_DETECTOR -> "Détecteur de lumière";
+
+            case NOTE_BLOCK -> "Bloc musical";
+
+            case JUKEBOX -> "Juke-box";
+
+            case LECTERN -> "Lutrin";
+
+            case BARREL -> "Tonneau";
+
+            case IRON_CHAIN -> "Chaîne";
+
+            case PAINTING -> "Tableau";
+
+            /*
+             * =========================
+             * NOURRITURE
+             * =========================
+             */
+
+            case CAKE -> "Gâteau";
+
+            case GOLDEN_APPLE -> "Pomme dorée";
+
+            case PUMPKIN_PIE -> "Tarte à la citrouille";
+
+            case COOKIE -> "Cookie";
+
+            case BREAD -> "Pain";
+
+            case COOKED_BEEF -> "Steak";
+
+            case RABBIT_STEW -> "Ragoût de lapin";
+
+            case SUSPICIOUS_STEW -> "Ragoût suspect";
+
+            /*
+             * =========================
+             * LOOT / EXPLORATION
+             * =========================
+             */
+
+            case SADDLE -> "Selle";
+
+            case NAME_TAG -> "Étiquette";
+
+            case ENDER_PEARL -> "Perle de l'End";
+
+            case TRIDENT -> "Trident";
+
+            case NAUTILUS_SHELL -> "Coquille de nautile";
+
+            case HEART_OF_THE_SEA -> "Cœur de la mer";
+
+            case MUSIC_DISC_13 -> "Disque 13";
+
+            case MUSIC_DISC_CAT -> "Disque Cat";
+
+            case ENCHANTED_BOOK -> "Livre enchanté";
+
+            case GOLDEN_HORSE_ARMOR -> "Armure en or pour cheval";
+
+            case DIAMOND_HORSE_ARMOR -> "Armure en diamant pour cheval";
+
+            /*
+             * =========================
+             * NETHER
+             * =========================
+             */
+
+            case BLAZE_ROD -> "Bâton de blaze";
+
+            case GHAST_TEAR -> "Larme de ghast";
+
+            case MAGMA_CREAM -> "Crème de magma";
+
+            case NETHER_WART -> "Verrue du Nether";
+
+            case QUARTZ -> "Quartz du Nether";
+
+            case GLOWSTONE_DUST -> "Poudre lumineuse";
+
+            /*
+             * =========================
+             * FARM / MOBS
+             * =========================
+             */
+
+            case HONEY_BOTTLE -> "Bouteille de miel";
+
+            case SLIME_BALL -> "Boule de slime";
+
+            case STRING -> "Ficelle";
+
+            case FEATHER -> "Plume";
+
+            case LEATHER -> "Cuir";
+
+            case EGG -> "Œuf";
+
+            case INK_SAC -> "Poche d'encre";
+
+            case GUNPOWDER -> "Poudre à canon";
+
+            case BONE -> "Os";
+
+            case ROTTEN_FLESH -> "Chair putréfiée";
+
+            case SPIDER_EYE -> "Œil d'araignée";
+
+            /*
+             * =========================
+             * RARES MAIS ACCESSIBLES
+             * =========================
+             */
+
+            case EMERALD -> "Émeraude";
+
+            case DIAMOND -> "Diamant";
+
+            case AMETHYST_SHARD -> "Éclat d'améthyste";
+
+            case PRISMARINE_CRYSTALS -> "Cristaux de prismarine";
+
+            case ECHO_SHARD -> "Fragment d'écho";
+
+            default -> material.name();
+        };
+    }
 }

@@ -177,7 +177,7 @@ public class MenuListener implements Listener {
         }
 
         /*
-         * Block Hunt Challenge
+         * Ore Challenge
          */
         else if (event.getCurrentItem().getType() == Material.DIAMOND_ORE) {
 
@@ -187,6 +187,20 @@ public class MenuListener implements Listener {
 
             Bukkit.broadcastMessage(
                     "§aOre Challenge sélectionné !"
+            );
+        }
+
+        /*
+         * Ore Challenge
+         */
+        else if (event.getCurrentItem().getType() == Material.STICK) {
+
+            plugin.getGameManager().setActiveChallenge(
+                    new RandomItemChallenge(plugin)
+            );
+
+            Bukkit.broadcastMessage(
+                    "§aRandom Item Challenge sélectionné !"
             );
         }
 
