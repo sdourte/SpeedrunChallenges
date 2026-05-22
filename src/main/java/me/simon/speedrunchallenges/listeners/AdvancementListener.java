@@ -43,10 +43,21 @@ public class AdvancementListener implements Listener {
         }
 
         /*
+         * Sécurité null.
+         */
+        if (challenge.getTargetAdvancement() == null) {
+            return;
+        }
+
+        /*
          * Vérifie advancement cible.
          */
         if (event.getAdvancement()
-                .equals(challenge.getTargetAdvancement())) {
+                .getKey()
+                .equals(
+                        challenge.getTargetAdvancement()
+                                .getKey()
+                )) {
 
             challenge.win(event.getPlayer());
         }

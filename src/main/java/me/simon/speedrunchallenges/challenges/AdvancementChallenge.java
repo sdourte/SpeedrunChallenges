@@ -89,7 +89,6 @@ public class AdvancementChallenge implements Challenge {
                 // Exploration
                 "minecraft:adventure/sleep_in_bed",
                 "minecraft:adventure/trade",
-                "minecraft:adventure/ol_betsy",
                 "minecraft:adventure/shoot_arrow",
                 "minecraft:adventure/kill_a_mob",
 
@@ -99,17 +98,10 @@ public class AdvancementChallenge implements Challenge {
                 "minecraft:husbandry/fishy_business",
                 "minecraft:husbandry/tame_an_animal",
 
-                // Redstone / craft
-                "minecraft:story/form_obsidian",
-                "minecraft:story/obtain_armor",
-
                 // Fun / variés
                 "minecraft:adventure/fall_from_world_height",
                 "minecraft:adventure/honey_block_slide",
                 "minecraft:adventure/root",
-
-                // Aquatique
-                "minecraft:adventure/adventuring_time",
 
                 // Divers
                 "minecraft:adventure/spyglass_at_parrot",
@@ -130,7 +122,6 @@ public class AdvancementChallenge implements Challenge {
 
                 // Nether fun
                 "minecraft:nether/distract_piglin",
-                "minecraft:nether/use_lodestone",
 
                 // Divers exploration
                 "minecraft:adventure/walk_on_powder_snow_with_leather_boots"
@@ -257,9 +248,6 @@ public class AdvancementChallenge implements Challenge {
             case "minecraft:adventure/trade"
                     -> "Commerce";
 
-            case "minecraft:adventure/ol_betsy"
-                    -> "Ol' Betsy";
-
             case "minecraft:adventure/shoot_arrow"
                     -> "Tir de précision";
 
@@ -279,10 +267,6 @@ public class AdvancementChallenge implements Challenge {
             case "minecraft:husbandry/tame_an_animal"
                     -> "Meilleur ami de l'homme";
 
-            // Craft / obsidienne
-            case "minecraft:story/form_obsidian"
-                    -> "Glace noire";
-
             // Fun / variés
             case "minecraft:adventure/fall_from_world_height"
                     -> "Tomber de très haut";
@@ -292,10 +276,6 @@ public class AdvancementChallenge implements Challenge {
 
             case "minecraft:adventure/root"
                     -> "L'aventure commence";
-
-            // Exploration avancée
-            case "minecraft:adventure/adventuring_time"
-                    -> "Temps d'aventure";
 
             // Spyglass
             case "minecraft:adventure/spyglass_at_parrot"
@@ -326,9 +306,6 @@ public class AdvancementChallenge implements Challenge {
             // Nether fun
             case "minecraft:nether/distract_piglin"
                     -> "Brillante distraction";
-
-            case "minecraft:nether/use_lodestone"
-                    -> "Boussole perdue";
 
             // Powder snow
             case "minecraft:adventure/walk_on_powder_snow_with_leather_boots"
