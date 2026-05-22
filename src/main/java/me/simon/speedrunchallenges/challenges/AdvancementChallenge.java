@@ -195,121 +195,121 @@ public class AdvancementChallenge implements Challenge {
 
             // Début de jeu
             case "minecraft:story/mine_stone"
-                    -> "Âge de pierre";
+                    -> "Cassez de la pierre avec une pioche";
 
             case "minecraft:story/upgrade_tools"
-                    -> "Une meilleure pioche";
+                    -> "Fabriquez une pioche en pierre";
 
             case "minecraft:story/smelt_iron"
-                    -> "Acquisition de matériel";
+                    -> "Faites fondre du fer";
 
             case "minecraft:story/obtain_armor"
-                    -> "Protégez-vous";
+                    -> "Équipez une armure en fer";
 
             case "minecraft:story/lava_bucket"
-                    -> "Chaud devant";
+                    -> "Remplissez un seau de lave";
 
             case "minecraft:story/iron_tools"
-                    -> "Ça coupe";
+                    -> "Fabriquez un outil en fer";
 
             case "minecraft:story/deflect_arrow"
-                    -> "Pas aujourd'hui, merci";
+                    -> "Bloquez une flèche avec un bouclier";
 
             // Diamants / progression
             case "minecraft:story/mine_diamond"
-                    -> "Diamants !";
+                    -> "Obtenez un diamant";
 
             case "minecraft:story/shiny_gear"
-                    -> "Couvert de diamants";
+                    -> "Équipez une armure en diamant";
 
             case "minecraft:story/enchant_item"
-                    -> "Enchanteur";
+                    -> "Enchantez un objet";
 
             // Nether
             case "minecraft:story/enter_the_nether"
-                    -> "Direction le Nether";
+                    -> "Entrez dans le Nether";
 
             case "minecraft:nether/obtain_blaze_rod"
-                    -> "Dans le feu";
+                    -> "Obtenez un bâton de blaze";
 
             case "minecraft:nether/find_fortress"
-                    -> "Une terrible forteresse";
+                    -> "Trouvez une forteresse du Nether";
 
             case "minecraft:nether/ride_strider"
-                    -> "Promenade infernale";
+                    -> "Montez un strider";
 
             case "minecraft:nether/loot_bastion"
-                    -> "Ces vestiges étaient les nôtres";
+                    -> "Ouvrez un coffre de bastion";
 
             // Exploration
             case "minecraft:adventure/sleep_in_bed"
-                    -> "Bonne nuit";
+                    -> "Dormez dans un lit";
 
             case "minecraft:adventure/trade"
-                    -> "Commerce";
+                    -> "Faites un échange avec un villageois";
 
             case "minecraft:adventure/shoot_arrow"
-                    -> "Tir de précision";
+                    -> "Tirez une flèche";
 
             case "minecraft:adventure/kill_a_mob"
-                    -> "Monstre chasseur";
+                    -> "Tuez une créature hostile";
 
             // Farming / nourriture
             case "minecraft:husbandry/plant_seed"
-                    -> "Un monde en croissance";
+                    -> "Plantez une graine";
 
             case "minecraft:husbandry/breed_an_animal"
-                    -> "Les perroquets et les chauves-souris";
+                    -> "Faites se reproduire deux animaux";
 
             case "minecraft:husbandry/fishy_business"
-                    -> "Poisson frais";
+                    -> "Attrapez un poisson";
 
             case "minecraft:husbandry/tame_an_animal"
-                    -> "Meilleur ami de l'homme";
+                    -> "Apprivoisez un animal";
 
             // Fun / variés
             case "minecraft:adventure/fall_from_world_height"
-                    -> "Tomber de très haut";
+                    -> "Tombez depuis une très grande hauteur";
 
             case "minecraft:adventure/honey_block_slide"
-                    -> "Glissade sucrée";
+                    -> "Glissez sur un bloc de miel";
 
             case "minecraft:adventure/root"
-                    -> "L'aventure commence";
+                    -> "Entrez dans l'onglet aventure";
 
             // Spyglass
             case "minecraft:adventure/spyglass_at_parrot"
-                    -> "Joli perroquet";
+                    -> "Regardez un perroquet avec une longue-vue";
 
             case "minecraft:adventure/spyglass_at_ghast"
-                    -> "Vision infernale";
+                    -> "Regardez un ghast avec une longue-vue";
 
             // Village
             case "minecraft:adventure/hero_of_the_village"
-                    -> "Héros du village";
+                    -> "Obtenez l'effet Héros du village";
 
             // Cuisine / glow
             case "minecraft:husbandry/make_a_sign_glow"
-                    -> "Signal lumineux";
+                    -> "Utilisez une poche d'encre lumineuse sur un panneau";
 
             // Trident / orage
             case "minecraft:adventure/throw_trident"
-                    -> "Lanceur de trident";
+                    -> "Lancez un trident";
 
             case "minecraft:adventure/very_very_frightening"
-                    -> "Très très effrayant";
+                    -> "Frappez un villageois avec la foudre";
 
             // Copper / lightning
             case "minecraft:adventure/lightning_rod_with_villager_no_fire"
-                    -> "Protection contre la foudre";
+                    -> "Protégez un villageois avec un paratonnerre";
 
             // Nether fun
             case "minecraft:nether/distract_piglin"
-                    -> "Brillante distraction";
+                    -> "Distrayez un piglin avec de l'or";
 
             // Powder snow
             case "minecraft:adventure/walk_on_powder_snow_with_leather_boots"
-                    -> "Randonnée hivernale";
+                    -> "Marchez sur de la neige poudreuse avec des bottes en cuir";
 
             default -> key;
         };
