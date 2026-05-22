@@ -8,6 +8,7 @@ C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\s
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\challenges\MobKillChallenge.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\challenges\OreChallenge.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\challenges\RandomItemChallenge.java
+C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\challenges\XPChallenge.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\commands\ChallengeCommand.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\commands\RemoveLobbyCommand.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\commands\SetLobbyCommand.java
@@ -29,6 +30,7 @@ C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\s
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\listeners\OreChallengeListener.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\listeners\PlayerDeathCountListener.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\listeners\RandomItemListener.java
+C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\listeners\XPChallengeListener.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\managers\LobbyManager.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\managers\ScoreboardManager.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\managers\TeleportManager.java

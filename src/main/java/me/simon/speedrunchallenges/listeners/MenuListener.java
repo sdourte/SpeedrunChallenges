@@ -191,7 +191,7 @@ public class MenuListener implements Listener {
         }
 
         /*
-         * Ore Challenge
+         * Random Item Challenge
          */
         else if (event.getCurrentItem().getType() == Material.STICK) {
 
@@ -201,6 +201,20 @@ public class MenuListener implements Listener {
 
             Bukkit.broadcastMessage(
                     "§aRandom Item Challenge sélectionné !"
+            );
+        }
+
+        /*
+         * XP Challenge
+         */
+        else if (event.getCurrentItem().getType() == Material.EXPERIENCE_BOTTLE) {
+
+            plugin.getGameManager().setActiveChallenge(
+                    new XPChallenge(plugin)
+            );
+
+            Bukkit.broadcastMessage(
+                    "§aXP Challenge sélectionné !"
             );
         }
 

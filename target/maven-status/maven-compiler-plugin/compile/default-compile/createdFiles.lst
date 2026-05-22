@@ -5,6 +5,7 @@ me\simon\speedrunchallenges\listeners\RandomItemListener.class
 me\simon\speedrunchallenges\challenges\RandomItemChallenge.class
 me\simon\speedrunchallenges\listeners\DeathSwapListener.class
 me\simon\speedrunchallenges\challenges\DeathChallenge$1.class
+me\simon\speedrunchallenges\challenges\XPChallenge.class
 me\simon\speedrunchallenges\challenges\DeathSwapChallenge.class
 me\simon\speedrunchallenges\listeners\DeathChallengeListener.class
 me\simon\speedrunchallenges\managers\TeleportManager.class
@@ -30,6 +31,7 @@ me\simon\speedrunchallenges\listeners\LobbyProtectionListener.class
 me\simon\speedrunchallenges\commands\SetLobbyCommand.class
 me\simon\speedrunchallenges\listeners\AnyMobListener.class
 me\simon\speedrunchallenges\listeners\OreChallengeListener.class
+me\simon\speedrunchallenges\listeners\XPChallengeListener.class
 me\simon\speedrunchallenges\challenges\AdvancementChallenge.class
 me\simon\speedrunchallenges\challenges\BlockHuntChallenge.class
 me\simon\speedrunchallenges\challenges\DiamondChallenge.class

@@ -171,6 +171,20 @@ public class ChallengeMenu {
         }
 
         /*
+         * XP Challenge
+         */
+        ItemStack xpChallengeItem = new ItemStack(Material.EXPERIENCE_BOTTLE);
+
+        ItemMeta xpChallengeMeta = xpChallengeItem.getItemMeta();
+
+        if (xpChallengeMeta != null) {
+
+            xpChallengeMeta.setDisplayName("§dXP Challenge");
+
+            xpChallengeItem.setItemMeta(xpChallengeMeta);
+        }
+
+        /*
          * Placement des items
          */
         inventory.setItem(0, diamondItem);
@@ -182,6 +196,7 @@ public class ChallengeMenu {
         inventory.setItem(6, blockHuntItem);
         inventory.setItem(7, oreChallengeItem);
         inventory.setItem(8, randomItemChallengeItem);
+        inventory.setItem(9, xpChallengeItem);
 
         /*
          * Ouvre le menu au joueur
