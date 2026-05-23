@@ -6,6 +6,7 @@ import org.bukkit.Bukkit;
 
 import org.bukkit.boss.BossBar;
 
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
 import org.bukkit.event.entity.EntityDamageEvent;
@@ -50,7 +51,7 @@ public class DamageChallenge implements Challenge {
     @Override
     public String getObjective() {
 
-        return "Subissez des dégâts sans mourir";
+        return "Subissez des dégâts";
     }
 
     @Override
@@ -61,36 +62,55 @@ public class DamageChallenge implements Challenge {
          */
         List<EntityDamageEvent.DamageCause> causes = List.of(
 
-                EntityDamageEvent.DamageCause.FALL,
-
-                EntityDamageEvent.DamageCause.FIRE,
-
-                EntityDamageEvent.DamageCause.LAVA,
-
+                // Eau
                 EntityDamageEvent.DamageCause.DROWNING,
 
-                EntityDamageEvent.DamageCause.CONTACT,
+                // Chute
+                EntityDamageEvent.DamageCause.FALL,
 
-                EntityDamageEvent.DamageCause.FREEZE
-        );
+                // Feu
+                EntityDamageEvent.DamageCause.FIRE,
+                EntityDamageEvent.DamageCause.FIRE_TICK,
+                EntityDamageEvent.DamageCause.LAVA,
+                EntityDamageEvent.DamageCause.HOT_FLOOR,
 
-        /*
-         * Dégâts possibles.
-         *
-         * En demi-cœurs Minecraft :
-         * 1 cœur = 2 damage
-         */
-        List<Double> damages = List.of(
-                2.0,
-                4.0,
-                6.0,
-                8.0,
-                10.0,
-                12.0,
-                14.0,
-                16.0,
-                18.0,
-                20.0
+                // Explosions
+                EntityDamageEvent.DamageCause.BLOCK_EXPLOSION,
+                EntityDamageEvent.DamageCause.ENTITY_EXPLOSION,
+
+                // Foudre
+                EntityDamageEvent.DamageCause.LIGHTNING,
+
+                // Contact
+                EntityDamageEvent.DamageCause.CONTACT, // cactus
+
+                // Faim (seulement ici car on ne peut pas mourir de faim)
+                EntityDamageEvent.DamageCause.STARVATION,
+
+                // Gel
+                EntityDamageEvent.DamageCause.FREEZE,
+
+                // Magie
+                EntityDamageEvent.DamageCause.MAGIC,
+                //(seulement ici car on ne peut pas mourir de poison)
+                EntityDamageEvent.DamageCause.POISON,
+
+                // Combat
+                EntityDamageEvent.DamageCause.ENTITY_ATTACK,
+                EntityDamageEvent.DamageCause.PROJECTILE,
+
+                // Divers
+                EntityDamageEvent.DamageCause.THORNS,
+                EntityDamageEvent.DamageCause.CRAMMING,
+
+                // Respiration / environnement
+                EntityDamageEvent.DamageCause.SUFFOCATION,
+
+                // Électricité / trident
+                EntityDamageEvent.DamageCause.LIGHTNING,
+
+                // Sol dangereux
+                EntityDamageEvent.DamageCause.HOT_FLOOR
         );
 
         /*
@@ -100,9 +120,13 @@ public class DamageChallenge implements Challenge {
                 random.nextInt(causes.size())
         );
 
-        targetDamage = damages.get(
-                random.nextInt(damages.size())
-        );
+        /*
+         * Dégâts aléatoires en 1 et 50.
+         *
+         * En demi-cœurs Minecraft :
+         * 1 cœur = 2 damage
+         */
+        targetDamage = random.nextInt(50) + 1;
 
         Bukkit.broadcastMessage(
                 "§eObjectif :"
@@ -291,17 +315,39 @@ public class DamageChallenge implements Challenge {
 
         return switch (targetCause) {
 
-            case FALL -> "de chute";
+            case HOT_FLOOR -> "Bloc de magma";
 
-            case FIRE -> "de feu";
+            case POISON -> "Poison";
 
-            case LAVA -> "de lave";
+            case ENTITY_ATTACK -> "Attaque de mob";
 
-            case DROWNING -> "de noyade";
+            case PROJECTILE -> "Projectile";
 
-            case CONTACT -> "de cactus";
+            case THORNS -> "Épines";
 
-            case FREEZE -> "de gel";
+            case CRAMMING -> "Écrasement (plein d'entités)";
+
+            case SUFFOCATION -> "Suffocation";
+
+            case DROWNING -> "Se noyer";
+            case FALL -> "Tomber dans le vide";
+            case FALLING_BLOCK -> "Gravité des blocs (enclume, stalactite)";
+            case LAVA -> "Mourir dans la lave";
+            case FIRE -> "Brûler (dans le feu)";
+            case FIRE_TICK -> "Brûler (hors du feu)";
+
+            case ENTITY_EXPLOSION -> "Explosion (mob)";
+            case BLOCK_EXPLOSION -> "Explosion (bloc)";
+
+            case LIGHTNING -> "Foudre";
+
+            case CONTACT -> "Cactus";
+
+            case STARVATION -> "Faim";
+
+            case FREEZE -> "Gel";
+
+            case MAGIC -> "Magie";
 
             default -> targetCause.name();
         };

@@ -3,20 +3,21 @@ package me.simon.speedrunchallenges.game;
 import me.simon.speedrunchallenges.SpeedrunChallenges;
 
 import me.simon.speedrunchallenges.challenges.Challenge;
-import me.simon.speedrunchallenges.challenges.DiamondChallenge;
 
 import me.simon.speedrunchallenges.utils.TimeUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.Location;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
 
 import org.bukkit.scheduler.BukkitRunnable;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class GameManager {
 
@@ -25,6 +26,37 @@ public class GameManager {
 
     // Etat actuel du jeu
     private GameState gameState;
+
+    // Spawnpoint de chaque joueur
+    private final Map<UUID, Location> playerSpawnLocations = new HashMap<>();
+
+    /*
+     * Définit le spawnpoint
+     * personnel d'un joueur.
+     */
+    public void setPlayerSpawn(
+            Player player,
+            Location location
+    ) {
+
+        playerSpawnLocations.put(
+                player.getUniqueId(),
+                location
+        );
+    }
+
+    /*
+     * Retourne le spawnpoint
+     * personnel du joueur.
+     */
+    public Location getPlayerSpawn(
+            Player player
+    ) {
+
+        return playerSpawnLocations.get(
+                player.getUniqueId()
+        );
+    }
 
     // BossBar du challenge
     private BossBar bossBar;

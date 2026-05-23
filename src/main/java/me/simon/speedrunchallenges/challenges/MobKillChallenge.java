@@ -76,8 +76,9 @@ public class MobKillChallenge implements Challenge {
                 EntityType.BLAZE,
                 EntityType.GHAST,
                 EntityType.MAGMA_CUBE,
-                EntityType.PIGLIN_BRUTE,
-                EntityType.ZOMBIFIED_PIGLIN,
+                EntityType.WITHER_SKELETON,
+                EntityType.PIGLIN,
+                EntityType.HOGLIN,
 
                 // End
                 EntityType.ENDERMAN,
@@ -96,11 +97,9 @@ public class MobKillChallenge implements Challenge {
 
                 // Divers
                 EntityType.WITCH,
-                EntityType.PHANTOM,
                 EntityType.SILVERFISH,
 
                 // Boss-lite / rares
-                EntityType.RAVAGER,
                 EntityType.HOGLIN
         };
 

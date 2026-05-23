@@ -50,31 +50,236 @@ public class BlockHuntChallenge implements Challenge {
          */
         List<Material> possibleBlocks = List.of(
 
-                Material.OAK_LOG,
+                /*
+                 * =========================
+                 * BLOCS DE BASE
+                 * =========================
+                 */
+
                 Material.STONE,
                 Material.COBBLESTONE,
+                Material.MOSSY_COBBLESTONE,
+                Material.GRANITE,
+                Material.DIORITE,
+                Material.ANDESITE,
+                Material.DEEPSLATE,
+                Material.COBBLED_DEEPSLATE,
+                Material.TUFF,
+                Material.CALCITE,
+                Material.DRIPSTONE_BLOCK,
+
+                /*
+                 * =========================
+                 * BOIS
+                 * =========================
+                 */
+
+                Material.OAK_LOG,
+                Material.BIRCH_LOG,
+                Material.SPRUCE_LOG,
+                Material.JUNGLE_LOG,
+                Material.ACACIA_LOG,
+                Material.DARK_OAK_LOG,
+                Material.MANGROVE_LOG,
+                Material.CHERRY_LOG,
+
+                Material.OAK_PLANKS,
+                Material.BIRCH_PLANKS,
+                Material.SPRUCE_PLANKS,
+                Material.JUNGLE_PLANKS,
+                Material.ACACIA_PLANKS,
+                Material.DARK_OAK_PLANKS,
+                Material.MANGROVE_PLANKS,
+                Material.CHERRY_PLANKS,
+
+                /*
+                 * =========================
+                 * TERRE / NATURE
+                 * =========================
+                 */
+
+                Material.DIRT,
+                Material.GRASS_BLOCK,
+                Material.COARSE_DIRT,
+                Material.PODZOL,
+                Material.CLAY,
+                Material.GRAVEL,
+                Material.SAND,
+                Material.RED_SAND,
+                Material.SNOW_BLOCK,
+                Material.ICE,
+                Material.PACKED_ICE,
+                Material.BLUE_ICE,
+                Material.MOSS_BLOCK,
+
+                /*
+                 * =========================
+                 * ORES
+                 * =========================
+                 */
 
                 Material.COAL_ORE,
                 Material.IRON_ORE,
+                Material.COPPER_ORE,
                 Material.GOLD_ORE,
                 Material.REDSTONE_ORE,
                 Material.LAPIS_ORE,
                 Material.DIAMOND_ORE,
                 Material.EMERALD_ORE,
 
-                Material.OBSIDIAN,
+                Material.DEEPSLATE_COAL_ORE,
+                Material.DEEPSLATE_IRON_ORE,
+                Material.DEEPSLATE_COPPER_ORE,
+                Material.DEEPSLATE_GOLD_ORE,
+                Material.DEEPSLATE_REDSTONE_ORE,
+                Material.DEEPSLATE_LAPIS_ORE,
+                Material.DEEPSLATE_DIAMOND_ORE,
+                Material.DEEPSLATE_EMERALD_ORE,
 
-                Material.GLASS,
-                Material.BOOKSHELF,
+                Material.NETHER_GOLD_ORE,
+                Material.NETHER_QUARTZ_ORE,
 
-                Material.HAY_BLOCK,
+                /*
+                 * =========================
+                 * BLOCS PRÉCIEUX
+                 * =========================
+                 */
 
-                Material.TNT,
+                Material.IRON_BLOCK,
+                Material.GOLD_BLOCK,
+                Material.DIAMOND_BLOCK,
+                Material.EMERALD_BLOCK,
+                Material.REDSTONE_BLOCK,
+                Material.LAPIS_BLOCK,
+                Material.COPPER_BLOCK,
+
+                Material.AMETHYST_BLOCK,
+
+                /*
+                 * =========================
+                 * NETHER
+                 * =========================
+                 */
 
                 Material.NETHERRACK,
                 Material.SOUL_SAND,
+                Material.SOUL_SOIL,
+                Material.BASALT,
+                Material.BLACKSTONE,
+                Material.GILDED_BLACKSTONE,
+                Material.MAGMA_BLOCK,
+                Material.GLOWSTONE,
+                Material.CRIMSON_NYLIUM,
+                Material.WARPED_NYLIUM,
+                Material.NETHER_BRICKS,
 
-                Material.ANCIENT_DEBRIS
+                Material.ANCIENT_DEBRIS,
+
+                /*
+                 * =========================
+                 * END
+                 * =========================
+                 */
+
+                Material.END_STONE,
+                Material.END_STONE_BRICKS,
+
+                /*
+                 * =========================
+                 * CONSTRUCTION
+                 * =========================
+                 */
+
+                Material.GLASS,
+                Material.GLASS_PANE,
+                Material.BRICKS,
+                Material.BRICK_SLAB,
+                Material.STONE_BRICKS,
+                Material.CHISELED_STONE_BRICKS,
+
+                Material.QUARTZ_BLOCK,
+                Material.QUARTZ_BRICKS,
+
+                Material.PRISMARINE,
+                Material.PRISMARINE_BRICKS,
+                Material.DARK_PRISMARINE,
+
+                /*
+                 * =========================
+                 * DÉCORATION
+                 * =========================
+                 */
+
+                Material.BOOKSHELF,
+                Material.CHISELED_BOOKSHELF,
+                Material.HAY_BLOCK,
+                Material.TNT,
+                Material.PUMPKIN,
+                Material.JACK_O_LANTERN,
+                Material.MELON,
+                Material.BEE_NEST,
+                Material.HONEYCOMB_BLOCK,
+                Material.TARGET,
+
+                /*
+                 * =========================
+                 * UTILITAIRES
+                 * =========================
+                 */
+
+                Material.CRAFTING_TABLE,
+                Material.FURNACE,
+                Material.BLAST_FURNACE,
+                Material.SMOKER,
+                Material.ANVIL,
+                Material.CHIPPED_ANVIL,
+                Material.DAMAGED_ANVIL,
+
+                Material.ENCHANTING_TABLE,
+                Material.ENDER_CHEST,
+                Material.BARREL,
+                Material.LOOM,
+                Material.CARTOGRAPHY_TABLE,
+                Material.SMITHING_TABLE,
+                Material.FLETCHING_TABLE,
+                Material.GRINDSTONE,
+
+                /*
+                 * =========================
+                 * REDSTONE
+                 * =========================
+                 */
+
+                Material.OBSERVER,
+                Material.PISTON,
+                Material.STICKY_PISTON,
+                Material.DISPENSER,
+                Material.DROPPER,
+                Material.NOTE_BLOCK,
+                Material.JUKEBOX,
+                Material.REPEATER,
+                Material.COMPARATOR,
+                Material.DAYLIGHT_DETECTOR,
+
+                /*
+                 * =========================
+                 * BLOCS PLUS RARES
+                 * =========================
+                 */
+
+                Material.OBSIDIAN,
+                Material.CRYING_OBSIDIAN,
+
+                Material.SCULK,
+                Material.SCULK_CATALYST,
+                Material.SCULK_SHRIEKER,
+
+                Material.SEA_LANTERN,
+
+                Material.SHROOMLIGHT,
+
+                Material.SPONGE,
+                Material.WET_SPONGE
         );
 
         /*

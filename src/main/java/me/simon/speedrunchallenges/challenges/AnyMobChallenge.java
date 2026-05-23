@@ -138,7 +138,6 @@ public class AnyMobChallenge implements Challenge {
                 EntityType.MAGMA_CUBE,
 
                 EntityType.WITCH,
-                EntityType.PHANTOM,
                 EntityType.SILVERFISH,
 
                 // Nether
@@ -146,11 +145,14 @@ public class AnyMobChallenge implements Challenge {
                 EntityType.GHAST,
                 EntityType.HOGLIN,
                 EntityType.PIGLIN,
-                EntityType.ZOMBIFIED_PIGLIN,
 
                 // Illagers
                 EntityType.PILLAGER,
                 EntityType.VINDICATOR,
+
+                // Aquatiques hostiles
+                EntityType.GUARDIAN,
+                EntityType.ELDER_GUARDIAN,
 
                 // Divers fun
                 EntityType.IRON_GOLEM,

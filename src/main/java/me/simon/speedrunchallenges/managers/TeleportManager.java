@@ -81,17 +81,34 @@ public class TeleportManager {
          */
         player.teleport(location);
 
-        /*
-         * Définit le spawnpoint personnel
-         * du joueur.
-         *
-         * Ainsi :
-         * - en cas de mort il respawn ici.
-         */
-        player.setRespawnLocation(location, true);
-
         player.sendMessage(
                 "§aTéléportation aléatoire..."
+        );
+
+        /*
+         * Attend quelques ticks
+         * avant de définir
+         * le spawnpoint.
+         */
+        Bukkit.getScheduler().runTaskLater(
+                plugin,
+                () -> {
+
+                    /*
+                     * Définit le spawnpoint personnel
+                     * du joueur.
+                     */
+                    plugin.getGameManager()
+                            .setPlayerSpawn(
+                                    player,
+                                    location
+                            );
+                    player.sendMessage(
+                            "§aSpawnpoint redéfini !"
+                    );
+
+                },
+                100L // 5 seconde
         );
     }
 }

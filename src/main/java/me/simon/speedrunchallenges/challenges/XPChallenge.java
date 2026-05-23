@@ -45,23 +45,10 @@ public class XPChallenge implements Challenge {
     public void start() {
 
         /*
-         * Niveaux possibles.
+         * Niveau aléatoire entre
+         * 1 et 30.
          */
-        List<Integer> possibleLevels = List.of(
-                5,
-                10,
-                15,
-                20,
-                25,
-                30
-        );
-
-        /*
-         * Choix aléatoire.
-         */
-        targetLevel = possibleLevels.get(
-                random.nextInt(possibleLevels.size())
-        );
+        targetLevel = random.nextInt(30) + 1;
 
         Bukkit.broadcastMessage(
                 "§eNiveau à atteindre :"

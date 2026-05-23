@@ -70,6 +70,7 @@ public class DeathChallenge implements Challenge {
 
                 // Chute
                 DamageCause.FALL,
+                DamageCause.FALLING_BLOCK,
 
                 // Feu
                 DamageCause.FIRE,
@@ -87,15 +88,11 @@ public class DeathChallenge implements Challenge {
                 // Contact
                 DamageCause.CONTACT, // cactus
 
-                // Faim
-                DamageCause.STARVATION,
-
                 // Gel
                 DamageCause.FREEZE,
 
                 // Magie
                 DamageCause.MAGIC,
-                DamageCause.POISON,
 
                 // Combat
                 DamageCause.ENTITY_ATTACK,
@@ -168,33 +165,29 @@ public class DeathChallenge implements Challenge {
 
             case HOT_FLOOR -> "Bloc de magma";
 
-            case POISON -> "Poison";
-
             case ENTITY_ATTACK -> "Attaque de mob";
 
             case PROJECTILE -> "Projectile";
 
             case THORNS -> "Épines";
 
-            case FLY_INTO_WALL -> "Collision en elytra";
-
-            case CRAMMING -> "Écrasement";
+            case CRAMMING -> "Écrasement (plein d'entités)";
 
             case SUFFOCATION -> "Suffocation";
 
             case DROWNING -> "Se noyer";
             case FALL -> "Tomber dans le vide";
+            case FALLING_BLOCK -> "Gravité des blocs (enclume, stalactite)";
             case LAVA -> "Mourir dans la lave";
-            case FIRE -> "Brûler";
-            case FIRE_TICK -> "Brûler";
+            case FIRE -> "Brûler (dans le feu)";
+            case FIRE_TICK -> "Brûler (hors du feu)";
 
-            case BLOCK_EXPLOSION -> "Explosion";
+            case ENTITY_EXPLOSION -> "Explosion (mob)";
+            case BLOCK_EXPLOSION -> "Explosion (bloc)";
 
             case LIGHTNING -> "Foudre";
 
             case CONTACT -> "Cactus";
-
-            case STARVATION -> "Faim";
 
             case FREEZE -> "Gel";
 

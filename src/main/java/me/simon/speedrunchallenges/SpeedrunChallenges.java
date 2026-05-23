@@ -86,6 +86,7 @@ public final class SpeedrunChallenges extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new XPChallengeListener(this), this);
         getServer().getPluginManager().registerEvents(new DimensionRaceListener(this), this);
         getServer().getPluginManager().registerEvents(new DamageChallengeListener(this), this);
+        getServer().getPluginManager().registerEvents(new PlayerRespawnListener(this), this);
 
         // Ajout des commandes
         getCommand("challenge").setExecutor(new ChallengeCommand(this));
