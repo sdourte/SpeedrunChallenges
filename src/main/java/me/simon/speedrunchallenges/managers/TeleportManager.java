@@ -46,7 +46,7 @@ public class TeleportManager {
         /*
          * Rayon maximal de téléportation.
          */
-        int radius = 3000;
+        int radius = 5000;
 
         /*
          * Coordonnées aléatoires.
@@ -93,6 +93,15 @@ public class TeleportManager {
         Bukkit.getScheduler().runTaskLater(
                 plugin,
                 () -> {
+
+                    /*
+                     * Reset anciens lits / anchors.
+                     * -> évite d'avoir un spawnpoint d'une partie précédente
+                     */
+                    player.setRespawnLocation(
+                            null,
+                            true
+                    );
 
                     /*
                      * Définit le spawnpoint personnel

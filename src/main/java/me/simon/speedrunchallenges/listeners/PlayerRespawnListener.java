@@ -29,10 +29,23 @@ public class PlayerRespawnListener
             PlayerRespawnEvent event
     ) {
 
+        /*
+         * Laisse Minecraft gérer
+         * si lit ou anchor.
+         */
+        if (event.isBedSpawn()
+
+                ||
+
+                event.isAnchorSpawn()) {
+
+            return;
+        }
+
         Player player = event.getPlayer();
 
         /*
-         * Spawnpoint perso.
+         * Spawnpoint perso challenge.
          */
         Location respawnLocation =
                 plugin.getGameManager()
@@ -46,7 +59,7 @@ public class PlayerRespawnListener
         }
 
         /*
-         * Force respawn custom.
+         * Fallback spawn challenge.
          */
         event.setRespawnLocation(
                 respawnLocation
