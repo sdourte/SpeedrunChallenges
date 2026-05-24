@@ -417,6 +417,14 @@ public class GameManager {
         );
 
         /*
+         * Stop challenge actif.
+         */
+        if (activeChallenge != null) {
+
+            activeChallenge.stop();
+        }
+
+        /*
          * Petit délai avant reset.
          */
         new BukkitRunnable() {

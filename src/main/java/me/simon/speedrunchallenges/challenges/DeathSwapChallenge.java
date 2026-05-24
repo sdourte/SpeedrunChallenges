@@ -6,50 +6,72 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 
 import org.bukkit.boss.BossBar;
+
 import org.bukkit.entity.Player;
 
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
-public class DeathSwapChallenge implements Challenge {
+import java.util.Map;
+import java.util.Random;
+
+public class DeathSwapChallenge
+        implements Challenge {
 
     // Référence plugin
     private final SpeedrunChallenges plugin;
 
-    // Temps entre les swaps (en secondes)
-    private final int swapInterval = 300;
+    // Random
+    private final Random random;
 
     // Timer actuel
     private int swapTimer;
 
-    // Task de swap
+    // Task swap
     private BukkitRunnable swapTask;
 
-    public DeathSwapChallenge(SpeedrunChallenges plugin) {
+    /*
+     * Joueur -> propriétaire
+     * de la position.
+     */
+    private final Map<Player, Player>
+            swapOwners;
+
+    public DeathSwapChallenge(
+            SpeedrunChallenges plugin
+    ) {
 
         this.plugin = plugin;
 
-        // Timer initial
-        this.swapTimer = swapInterval;
+        this.random = new Random();
+
+        this.swapOwners =
+                new HashMap<>();
     }
 
     @Override
     public String getName() {
+
         return "Death Swap";
     }
 
     @Override
     public String getObjective() {
-        return "Faites mourir votre adversaire";
+
+        return "Faites mourir un joueur";
     }
 
     @Override
-    public void setupBossBar(BossBar bossBar) {
+    public void setupBossBar(
+            BossBar bossBar
+    ) {
 
         bossBar.setTitle(
-                "§cFaites mourir votre adversaire"
+                "§cFaites mourir un joueur"
         );
 
         bossBar.setProgress(1.0);
@@ -62,19 +84,28 @@ public class DeathSwapChallenge implements Challenge {
                 "§cDeath Swap commencé !"
         );
 
-        startSwapTask();
+        /*
+         * Premier swap :
+         * 10 minutes.
+         */
+        scheduleNextSwap(10);
     }
 
     @Override
     public void stop() {
 
         /*
-         * Stop du runnable de swap.
+         * Stop task swap.
          */
         if (swapTask != null) {
 
             swapTask.cancel();
         }
+
+        /*
+         * Reset swaps.
+         */
+        swapOwners.clear();
 
         Bukkit.broadcastMessage(
                 "§cDeath Swap terminé."
@@ -82,90 +113,117 @@ public class DeathSwapChallenge implements Challenge {
     }
 
     @Override
-    public void win(Player player) {
+    public void win(
+            Player player
+    ) {
 
         Bukkit.broadcastMessage(
-                "§a" + player.getName()
+                "§a"
+                        + player.getName()
                         + " a gagné le Death Swap !"
         );
 
-        plugin.getGameManager().endGame(player);
+        plugin.getGameManager()
+                .endGame(player);
 
         stop();
     }
 
     /*
-     * Lance le timer de swap.
+     * Planifie prochain swap.
      */
-    private void startSwapTask() {
+    private void scheduleNextSwap(
+            int minutes
+    ) {
 
-        swapTask = new BukkitRunnable() {
+        swapTimer = minutes * 60;
 
-            @Override
-            public void run() {
+        Bukkit.broadcastMessage(
+                "§eProchain swap dans §f"
+                        + minutes
+                        + " minutes"
+        );
 
-                /*
-                 * Vérifie que le challenge
-                 * est toujours actif.
-                 */
-                if (!(plugin.getGameManager()
-                        .getActiveChallenge()
-                        instanceof DeathSwapChallenge)) {
+        swapTask =
+                new BukkitRunnable() {
 
-                    cancel();
-                    return;
-                }
+                    @Override
+                    public void run() {
 
-                // Réduction timer
-                swapTimer--;
+                        /*
+                         * Vérifie challenge actif.
+                         */
+                        if (!(plugin.getGameManager()
+                                .getActiveChallenge()
+                                instanceof DeathSwapChallenge)) {
 
-                /*
-                 * Affichage timer chat.
-                 */
-                if (swapTimer <= 10
-                        || swapTimer % 60 == 0) {
+                            cancel();
+                            return;
+                        }
 
-                    Bukkit.broadcastMessage(
-                            "§eSwap dans "
-                                    + swapTimer
-                                    + " secondes !"
-                    );
-                }
+                        // Réduction timer
+                        swapTimer--;
 
-                /*
-                 * Countdown au centre de l'écran.
-                 */
-                if (swapTimer <= 5
-                        && swapTimer > 0) {
+                        /*
+                         * Affichage timer.
+                         */
+                        if (swapTimer <= 10
+                                || swapTimer % 60 == 0) {
 
-                    for (Player player
-                            : Bukkit.getOnlinePlayers()) {
+                            Bukkit.broadcastMessage(
+                                    "§eSwap dans "
+                                            + swapTimer
+                                            + " secondes !"
+                            );
+                        }
 
-                        player.sendTitle(
-                                "§c" + swapTimer,
-                                "§fPréparez-vous au swap !",
-                                0,
-                                20,
-                                0
-                        );
+                        /*
+                         * Countdown écran.
+                         */
+                        if (swapTimer <= 5
+                                && swapTimer > 0) {
+
+                            for (Player player
+                                    : Bukkit.getOnlinePlayers()) {
+
+                                player.sendTitle(
+                                        "§c"
+                                                + swapTimer,
+                                        "§fPréparez-vous au swap !",
+                                        0,
+                                        20,
+                                        0
+                                );
+                            }
+                        }
+
+                        /*
+                         * Déclenche swap.
+                         */
+                        if (swapTimer <= 0) {
+
+                            cancel();
+
+                            performSwap();
+
+                            /*
+                             * Nouveau délai :
+                             * 5 -> 15 minutes.
+                             */
+                            int nextSwap =
+                                    random.nextInt(11)
+                                            + 5;
+
+                            scheduleNextSwap(
+                                    nextSwap
+                            );
+                        }
                     }
-                }
 
-                /*
-                 * Déclenchement du swap.
-                 */
-                if (swapTimer <= 0) {
-
-                    performSwap();
-
-                    // Reset timer
-                    swapTimer = swapInterval;
-                }
-            }
-        };
+                };
 
         /*
-         * Lancement du runnable.
+         * Lancement task.
          */
         swapTask.runTaskTimer(
                 plugin,
@@ -175,17 +233,19 @@ public class DeathSwapChallenge implements Challenge {
     }
 
     /*
-     * Échange les positions.
+     * Effectue swap multi.
      */
     private void performSwap() {
 
         List<Player> players =
-                new ArrayList<>(Bukkit.getOnlinePlayers());
+                new ArrayList<>(
+                        Bukkit.getOnlinePlayers()
+                );
 
         /*
-         * Vérifie qu'il y a 2 joueurs.
+         * Minimum 2 joueurs.
          */
-        if (players.size() != 2) {
+        if (players.size() < 2) {
 
             Bukkit.broadcastMessage(
                     "§cPas assez de joueurs pour swap."
@@ -194,42 +254,114 @@ public class DeathSwapChallenge implements Challenge {
             return;
         }
 
-        Player player1 = players.get(0);
-        Player player2 = players.get(1);
-
         /*
          * Sauvegarde positions.
          */
-        Location loc1 = player1.getLocation();
-        Location loc2 = player2.getLocation();
+        Map<Player, Location> locations =
+                new HashMap<>();
+
+        for (Player player : players) {
+
+            locations.put(
+                    player,
+                    player.getLocation()
+            );
+        }
 
         /*
-         * Swap des positions.
+         * Mélange joueurs.
          */
-        player1.teleport(loc2);
-        player2.teleport(loc1);
+        List<Player> shuffled =
+                new ArrayList<>(players);
+
+        do {
+
+            Collections.shuffle(shuffled);
+
+        } while (containsSelfAssignment(
+                players,
+                shuffled
+        ));
 
         /*
-         * Effets visuels.
+         * Effectue swaps.
          */
-        player1.sendTitle(
-                "§4§lSWAP !",
-                "§fLes positions ont été échangées",
-                10,
-                40,
-                10
-        );
+        for (int i = 0;
+             i < players.size();
+             i++) {
 
-        player2.sendTitle(
-                "§4§lSWAP !",
-                "§fLes positions ont été échangées",
-                10,
-                40,
-                10
-        );
+            Player player =
+                    players.get(i);
+
+            Player target =
+                    shuffled.get(i);
+
+            Location targetLocation =
+                    locations.get(target);
+
+            /*
+             * Téléportation.
+             */
+            player.teleport(
+                    targetLocation
+            );
+
+            /*
+             * Sauvegarde propriétaire.
+             */
+            swapOwners.put(
+                    player,
+                    target
+            );
+
+            /*
+             * Effet visuel.
+             */
+            player.sendTitle(
+                    "§4§lSWAP !",
+                    "§fVous avez été échangé",
+                    10,
+                    40,
+                    10
+            );
+        }
 
         Bukkit.broadcastMessage(
-                "§cLes joueurs ont été échangés !"
+                "§cLes positions ont été échangées !"
         );
+    }
+
+    /*
+     * Vérifie qu'aucun joueur
+     * ne garde sa propre position.
+     */
+    private boolean containsSelfAssignment(
+            List<Player> original,
+            List<Player> shuffled
+    ) {
+
+        for (int i = 0;
+             i < original.size();
+             i++) {
+
+            if (original.get(i)
+                    .equals(shuffled.get(i))) {
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /*
+     * Retourne propriétaire
+     * du piège.
+     */
+    public Player getSwapOwner(
+            Player deadPlayer
+    ) {
+
+        return swapOwners.get(deadPlayer);
     }
 }

@@ -15,22 +15,29 @@ import org.bukkit.event.Listener;
 
 import org.bukkit.event.entity.PlayerDeathEvent;
 
-public class DeathSwapListener implements Listener {
+public class DeathSwapListener
+        implements Listener {
 
     // Référence plugin
     private final SpeedrunChallenges plugin;
 
-    public DeathSwapListener(SpeedrunChallenges plugin) {
+    public DeathSwapListener(
+            SpeedrunChallenges plugin
+    ) {
+
         this.plugin = plugin;
     }
 
     @EventHandler
-    public void onDeath(PlayerDeathEvent event) {
+    public void onDeath(
+            PlayerDeathEvent event
+    ) {
 
         /*
          * Vérifie game actif.
          */
-        if (plugin.getGameManager().getGameState()
+        if (plugin.getGameManager()
+                .getGameState()
                 != GameState.RUNNING) {
 
             return;
@@ -46,19 +53,41 @@ public class DeathSwapListener implements Listener {
             return;
         }
 
-        Player deadPlayer = event.getEntity();
+        Player deadPlayer =
+                event.getEntity();
 
         /*
-         * Trouve le gagnant.
+         * Récupère propriétaire
+         * du dernier swap.
          */
-        for (Player player : Bukkit.getOnlinePlayers()) {
+        Player winner =
+                challenge.getSwapOwner(
+                        deadPlayer
+                );
 
-            if (!player.equals(deadPlayer)) {
+        /*
+         * Sécurité.
+         */
+        if (winner == null) {
 
-                challenge.win(player);
+            Bukkit.broadcastMessage(
+                    "§cAucun gagnant trouvé."
+            );
 
-                break;
-            }
+            return;
         }
+
+        Bukkit.broadcastMessage(
+                "§6"
+                        + winner.getName()
+                        + " §aa réussi à tuer "
+                        + deadPlayer.getName()
+                        + " !"
+        );
+
+        /*
+         * Victoire.
+         */
+        challenge.win(winner);
     }
 }
