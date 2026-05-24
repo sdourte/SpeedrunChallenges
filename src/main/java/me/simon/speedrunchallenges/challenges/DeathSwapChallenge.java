@@ -138,10 +138,40 @@ public class DeathSwapChallenge
 
         swapTimer = minutes * 60;
 
+        /*
+         * Affichage lisible.
+         */
+        String timeMessage;
+
+        /*
+         * Minutes.
+         */
+        if (swapTimer >= 60) {
+
+            int remainingMinutes =
+                    swapTimer / 60;
+
+            timeMessage =
+                    remainingMinutes
+                            + " minute"
+                            + (remainingMinutes > 1 ? "s" : "");
+        }
+
+        /*
+         * Secondes.
+         */
+        else {
+
+            timeMessage =
+                    swapTimer
+                            + " seconde"
+                            + (swapTimer > 1 ? "s" : "");
+        }
+
         Bukkit.broadcastMessage(
-                "§eProchain swap dans §f"
-                        + minutes
-                        + " minutes"
+                "§eSwap dans "
+                        + timeMessage
+                        + " !"
         );
 
         swapTask =
@@ -170,10 +200,40 @@ public class DeathSwapChallenge
                         if (swapTimer <= 10
                                 || swapTimer % 60 == 0) {
 
+                            /*
+                             * Temps lisible.
+                             */
+                            String timeMessage;
+
+                            /*
+                             * Minutes.
+                             */
+                            if (swapTimer >= 60) {
+
+                                int remainingMinutes =
+                                        swapTimer / 60;
+
+                                timeMessage =
+                                        remainingMinutes
+                                                + " minute"
+                                                + (remainingMinutes > 1 ? "s" : "");
+                            }
+
+                            /*
+                             * Secondes.
+                             */
+                            else {
+
+                                timeMessage =
+                                        swapTimer
+                                                + " seconde"
+                                                + (swapTimer > 1 ? "s" : "");
+                            }
+
                             Bukkit.broadcastMessage(
                                     "§eSwap dans "
-                                            + swapTimer
-                                            + " secondes !"
+                                            + timeMessage
+                                            + " !"
                             );
                         }
 
