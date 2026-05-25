@@ -4,20 +4,33 @@ public class TimeUtils {
 
     /*
      * Convertit des secondes
-     * en format mm:ss.
+     * en format hh:mm:ss.
      */
-    public static String formatTime(int seconds) {
-
-        int minutes = seconds / 60;
-
-        int remainingSeconds = seconds % 60;
+    public static String formatTime(
+            int seconds
+    ) {
 
         /*
-         * Exemple :
-         * 3:05
+         * Heures.
          */
+        int hours =
+                seconds / 3600;
+
+        /*
+         * Minutes restantes.
+         */
+        int minutes =
+                (seconds % 3600) / 60;
+
+        /*
+         * Secondes restantes.
+         */
+        int remainingSeconds =
+                seconds % 60;
+
         return String.format(
-                "%02d:%02d",
+                "%02d:%02d:%02d",
+                hours,
                 minutes,
                 remainingSeconds
         );
