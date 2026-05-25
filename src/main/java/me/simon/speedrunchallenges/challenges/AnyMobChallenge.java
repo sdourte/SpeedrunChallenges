@@ -51,22 +51,69 @@ public class AnyMobChallenge implements Challenge {
     public void setupBossBar(BossBar bossBar) {
 
         /*
-         * Initialise BossBar vide.
+         * BossBar pleine en permanence.
          */
-        bossBar.setProgress(0);
+        bossBar.setProgress(1.0);
 
         /*
-         * Met immédiatement
-         * les vrais objectifs.
+         * Initialise affichage objectifs.
          */
-        if (!Bukkit.getOnlinePlayers().isEmpty()) {
+        setupBossBarObjectives();
+    }
 
-            updateBossBar(
-                    Bukkit.getOnlinePlayers()
-                            .iterator()
-                            .next()
+    /*
+     * Initialise affichage BossBar.
+     */
+    private void setupBossBarObjectives() {
+
+        /*
+         * Vérifie BossBar.
+         */
+        if (plugin.getGameManager()
+                .getBossBar() == null) {
+
+            return;
+        }
+
+        /*
+         * Construction texte.
+         */
+        StringBuilder builder =
+                new StringBuilder("§eMobs : ");
+
+        for (EntityType mob : targetMobs) {
+
+            builder.append(
+                    plugin.getTranslationManager()
+                            .getMobName(mob)
+            );
+
+            builder.append(" §7| ");
+        }
+
+        /*
+         * Retire dernier séparateur.
+         */
+        if (builder.length() >= 3) {
+
+            builder.setLength(
+                    builder.length() - 3
             );
         }
+
+        /*
+         * Mise à jour titre.
+         */
+        plugin.getGameManager()
+                .getBossBar()
+                .setTitle(builder.toString());
+
+        /*
+         * BossBar fixe.
+         */
+        plugin.getGameManager()
+                .getBossBar()
+                .setProgress(1.0);
     }
 
     @Override
@@ -188,8 +235,7 @@ public class AnyMobChallenge implements Challenge {
         }
 
         /*
-         * Initialise progression joueurs
-         * et met à jour la BossBar.
+         * Initialise progression joueurs.
          */
         for (Player player
                 : Bukkit.getOnlinePlayers()) {
@@ -198,9 +244,12 @@ public class AnyMobChallenge implements Challenge {
                     player,
                     new HashSet<>()
             );
-
-            updateBossBar(player);
         }
+
+        /*
+         * Initialise BossBar.
+         */
+        setupBossBarObjectives();
     }
 
     @Override
@@ -222,69 +271,6 @@ public class AnyMobChallenge implements Challenge {
         plugin.getGameManager().endGame(player);
 
         stop();
-    }
-
-    /*
-     * Met à jour la BossBar
-     * d'un joueur.
-     */
-    private void updateBossBar(Player player) {
-
-        /*
-         * Vérifie BossBar.
-         */
-        if (plugin.getGameManager()
-                .getBossBar() == null) {
-
-            return;
-        }
-
-        int completed =
-                playerProgress.get(player).size();
-
-        int total = targetMobs.size();
-
-        /*
-         * Construction texte.
-         */
-        StringBuilder builder =
-                new StringBuilder("§eObjectifs : ");
-
-        for (EntityType mob : targetMobs) {
-
-            if (playerProgress.get(player)
-                    .contains(mob)) {
-
-                builder.append("§a✔ ");
-
-            } else {
-
-                builder.append("§c✘ ");
-            }
-
-            builder.append(
-                    plugin.getTranslationManager()
-                            .getMobName(mob)
-            );
-
-            builder.append(" §7| ");
-        }
-
-        /*
-         * Mise à jour titre.
-         */
-        plugin.getGameManager()
-                .getBossBar()
-                .setTitle(builder.toString());
-
-        /*
-         * Progression.
-         */
-        plugin.getGameManager()
-                .getBossBar()
-                .setProgress(
-                        (double) completed / total
-                );
     }
 
     /*
@@ -311,6 +297,15 @@ public class AnyMobChallenge implements Challenge {
         );
 
         /*
+         * Vérifie si déjà validé.
+         */
+        if (playerProgress.get(player)
+                .contains(killedMob)) {
+
+            return;
+        }
+
+        /*
          * Ajoute le mob tué.
          */
         playerProgress.get(player)
@@ -321,9 +316,6 @@ public class AnyMobChallenge implements Challenge {
                         + plugin.getTranslationManager()
                         .getMobName(killedMob)
         );
-
-        // On met à jour la barre de progression
-        updateBossBar(player);
 
         /*
          * Vérifie victoire.
