@@ -57,9 +57,18 @@ public class DamageChallenge implements Challenge {
     @Override
     public String getRecordKey() {
 
+        double hearts =
+                targetDamage / 2.0;
+
         return "damage:"
-                + targetCause.name()
-                + targetDamage;
+                + getDamageName()
+                .replace(" ", "_")
+                .replace("(", "")
+                .replace(")", "")
+                + "--"
+                + String.format("%.1f", hearts)
+                .replace('.', ',')
+                + "coeurs";
     }
 
     @Override
