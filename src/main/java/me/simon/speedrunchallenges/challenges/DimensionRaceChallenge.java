@@ -47,6 +47,13 @@ public class DimensionRaceChallenge implements Challenge {
     }
 
     @Override
+    public String getRecordKey() {
+
+        return "dimensionrace:"
+                + targetDimension.name();
+    }
+
+    @Override
     public void start() {
 
         /*

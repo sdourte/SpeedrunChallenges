@@ -48,6 +48,19 @@ public class AnyMobChallenge implements Challenge {
     }
 
     @Override
+    public String getRecordKey() {
+
+        List<String> names =
+                targetMobs.stream()
+                        .map(Enum::name)
+                        .sorted()
+                        .toList();
+
+        return "anymobkill:"
+                + String.join("_", names);
+    }
+
+    @Override
     public void setupBossBar(BossBar bossBar) {
 
         /*

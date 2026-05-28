@@ -28,6 +28,12 @@ public class DiamondChallenge implements Challenge {
     }
 
     @Override
+    public String getRecordKey() {
+
+        return "diamond";
+    }
+
+    @Override
     public void setupBossBar(BossBar bossBar) {
 
         bossBar.setTitle(

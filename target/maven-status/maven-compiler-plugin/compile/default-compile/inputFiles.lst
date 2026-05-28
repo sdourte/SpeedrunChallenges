@@ -13,6 +13,7 @@ C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\s
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\challenges\RandomItemChallenge.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\challenges\XPChallenge.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\commands\ChallengeCommand.java
+C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\commands\RecordsCommand.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\commands\RemoveLobbyCommand.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\commands\ResetWorldCommand.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\commands\SetLobbyCommand.java
@@ -43,5 +44,7 @@ C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\s
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\managers\ScoreboardManager.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\managers\TeleportManager.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\managers\TranslationManager.java
+C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\records\ChallengeRecord.java
+C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\records\RecordManager.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\SpeedrunChallenges.java
 C:\Users\HP\Bureau\Minecraft\Plugins\SpeedrunChallenges\src\main\java\me\simon\speedrunchallenges\utils\TimeUtils.java

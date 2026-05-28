@@ -45,6 +45,13 @@ public class RandomItemChallenge implements Challenge {
     }
 
     @Override
+    public String getRecordKey() {
+
+        return "randomitem:"
+                + targetItem.name();
+    }
+
+    @Override
     public void start() {
 
         /*

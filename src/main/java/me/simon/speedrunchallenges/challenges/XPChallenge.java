@@ -42,6 +42,13 @@ public class XPChallenge implements Challenge {
     }
 
     @Override
+    public String getRecordKey() {
+
+        return "xp:"
+                + targetLevel;
+    }
+
+    @Override
     public void start() {
 
         /*

@@ -43,6 +43,13 @@ public class OreChallenge implements Challenge {
     }
 
     @Override
+    public String getRecordKey() {
+
+        return "ore:"
+                + targetOre.name();
+    }
+
+    @Override
     public void start() {
 
         /*

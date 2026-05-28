@@ -16,6 +16,11 @@ public interface Challenge {
     String getObjective();
 
     /*
+     * Récupération des éléments d'un record
+     */
+    String getRecordKey();
+
+    /*
      * Méthode de personnalisation de la Boss Bar
      */
     void setupBossBar(BossBar bossBar);

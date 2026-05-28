@@ -4,6 +4,7 @@ import me.simon.speedrunchallenges.commands.*;
 import me.simon.speedrunchallenges.game.GameManager;
 import me.simon.speedrunchallenges.listeners.*;
 import me.simon.speedrunchallenges.managers.*;
+import me.simon.speedrunchallenges.records.RecordManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class SpeedrunChallenges extends JavaPlugin {
@@ -30,6 +31,15 @@ public final class SpeedrunChallenges extends JavaPlugin {
     // Getter de la téléportation
     public TeleportManager getTeleportManager() {
         return teleportManager;
+    }
+
+    // Gestion des records
+    private RecordManager recordManager;
+
+    // Getter des records
+    public RecordManager getRecordManager() {
+
+        return recordManager;
     }
 
     // Lobby
@@ -61,6 +71,9 @@ public final class SpeedrunChallenges extends JavaPlugin {
 
         // Création d'une téléportation random
         this.teleportManager = new TeleportManager(this);
+
+        // Création des records
+        this.recordManager = new RecordManager(this);
 
         // Création d'un lobby
         this.lobbyManager = new LobbyManager(this);
@@ -94,6 +107,7 @@ public final class SpeedrunChallenges extends JavaPlugin {
         getCommand("removelobby").setExecutor(new RemoveLobbyCommand(this));
         getCommand("stopchallenge").setExecutor(new StopChallengeCommand(this));
         getCommand("resetworld").setExecutor(new ResetWorldCommand(this));
+        getCommand("records").setExecutor(new RecordsCommand(this));
     }
 
 

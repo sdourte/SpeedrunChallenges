@@ -20,3 +20,6 @@ commands:
 
   resetworld:
     description: Reset le monde
+
+  records:
+    description: Affiche les records

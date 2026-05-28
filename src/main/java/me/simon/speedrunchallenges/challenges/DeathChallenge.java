@@ -47,6 +47,13 @@ public class DeathChallenge implements Challenge {
     }
 
     @Override
+    public String getRecordKey() {
+
+        return "death:"
+                + targetDeath.name();
+    }
+
+    @Override
     public void setupBossBar(BossBar bossBar) {
 
         bossBar.setTitle(

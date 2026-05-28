@@ -47,6 +47,13 @@ public class AdvancementChallenge implements Challenge {
     }
 
     @Override
+    public String getRecordKey() {
+
+        return "advancement:"
+                + targetAdvancement.getKey().toString();
+    }
+
+    @Override
     public void setupBossBar(BossBar bossBar) {
 
         bossBar.setTitle(

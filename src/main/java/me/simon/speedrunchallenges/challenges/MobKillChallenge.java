@@ -39,6 +39,13 @@ public class MobKillChallenge implements Challenge {
     }
 
     @Override
+    public String getRecordKey() {
+
+        return "mobkill:"
+                + targetMob.name();
+    }
+
+    @Override
     public void setupBossBar(BossBar bossBar) {
 
         bossBar.setTitle(

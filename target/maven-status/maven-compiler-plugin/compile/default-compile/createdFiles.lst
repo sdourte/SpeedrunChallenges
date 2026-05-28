@@ -19,6 +19,7 @@ me\simon\speedrunchallenges\listeners\AnyMobListener.class
 me\simon\speedrunchallenges\listeners\OreChallengeListener.class
 me\simon\speedrunchallenges\listeners\XPChallengeListener.class
 me\simon\speedrunchallenges\challenges\AdvancementChallenge.class
+me\simon\speedrunchallenges\records\RecordManager.class
 me\simon\speedrunchallenges\challenges\BlockHuntChallenge.class
 me\simon\speedrunchallenges\challenges\DamageChallenge$1.class
 me\simon\speedrunchallenges\challenges\DiamondChallenge.class
@@ -31,6 +32,7 @@ me\simon\speedrunchallenges\listeners\AdvancementListener.class
 me\simon\speedrunchallenges\game\GameManager.class
 me\simon\speedrunchallenges\listeners\PlayerRespawnListener.class
 me\simon\speedrunchallenges\listeners\RandomItemListener.class
+me\simon\speedrunchallenges\records\ChallengeRecord.class
 me\simon\speedrunchallenges\challenges\RandomItemChallenge.class
 me\simon\speedrunchallenges\challenges\DeathChallenge$1.class
 me\simon\speedrunchallenges\challenges\XPChallenge.class
@@ -52,5 +54,6 @@ me\simon\speedrunchallenges\game\GameState.class
 me\simon\speedrunchallenges\listeners\LobbyProtectionListener.class
 me\simon\speedrunchallenges\listeners\JoinListener.class
 me\simon\speedrunchallenges\managers\ScoreboardManager.class
+me\simon\speedrunchallenges\commands\RecordsCommand.class
 me\simon\speedrunchallenges\commands\StopChallengeCommand.class
 me\simon\speedrunchallenges\SpeedrunChallenges.class

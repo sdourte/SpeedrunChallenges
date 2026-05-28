@@ -55,6 +55,14 @@ public class DamageChallenge implements Challenge {
     }
 
     @Override
+    public String getRecordKey() {
+
+        return "damage:"
+                + targetCause.name()
+                + targetDamage;
+    }
+
+    @Override
     public void start() {
 
         /*

@@ -66,6 +66,12 @@ public class DeathSwapChallenge
     }
 
     @Override
+    public String getRecordKey() {
+
+        return "deathswap";
+    }
+
+    @Override
     public void setupBossBar(
             BossBar bossBar
     ) {

@@ -4,6 +4,8 @@ import me.simon.speedrunchallenges.SpeedrunChallenges;
 
 import me.simon.speedrunchallenges.challenges.Challenge;
 
+import me.simon.speedrunchallenges.records.ChallengeRecord;
+import me.simon.speedrunchallenges.records.RecordManager;
 import me.simon.speedrunchallenges.utils.TimeUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -415,6 +417,34 @@ public class GameManager {
                         + " a réussi le challenge en "
                         + TimeUtils.formatTime(plugin.getGameManager().getGameTime())
         );
+
+        /*
+         * Sauvegarde record.
+         */
+        plugin.getRecordManager()
+                .saveRecord(
+                        activeChallenge.getRecordKey(),
+                        winner.getName(),
+                        gameTime
+                );
+
+        // Mise à jour du nouveau record
+        ChallengeRecord record =
+                plugin.getRecordManager()
+                        .getRecord(
+                                activeChallenge.getRecordKey()
+                        );
+
+        if (record != null
+                && record.getPlayerName()
+                .equals(winner.getName())
+                && record.getTime()
+                == gameTime) {
+
+            Bukkit.broadcastMessage(
+                    "§6✨ Nouveau record !"
+            );
+        }
 
         /*
          * Stop challenge actif.

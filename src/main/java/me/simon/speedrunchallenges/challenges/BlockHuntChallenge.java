@@ -43,6 +43,13 @@ public class BlockHuntChallenge implements Challenge {
     }
 
     @Override
+    public String getRecordKey() {
+
+        return "blockhunt:"
+                + targetBlock.name();
+    }
+
+    @Override
     public void start() {
 
         /*
