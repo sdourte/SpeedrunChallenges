@@ -7,10 +7,7 @@ import org.bukkit.Bukkit;
 
 import org.bukkit.entity.Player;
 
-import org.bukkit.scoreboard.Criteria;
-import org.bukkit.scoreboard.DisplaySlot;
-import org.bukkit.scoreboard.Objective;
-import org.bukkit.scoreboard.Scoreboard;
+import org.bukkit.scoreboard.*;
 
 public class ScoreboardManager {
 
@@ -31,6 +28,22 @@ public class ScoreboardManager {
          */
         Scoreboard scoreboard = Bukkit.getScoreboardManager()
                 .getNewScoreboard();
+
+        // Barre de vie des joueurs
+        Objective health =
+                scoreboard.registerNewObjective(
+                        "vie",
+                        Criteria.HEALTH,
+                        "§c❤"
+                );
+
+        health.setDisplaySlot(
+                DisplaySlot.PLAYER_LIST
+        );
+
+        health.setRenderType(
+                RenderType.HEARTS
+        );
 
         /*
          * Sidebar principale.

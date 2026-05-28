@@ -79,7 +79,7 @@ public class AnyMobChallenge implements Challenge {
          * Construction texte.
          */
         StringBuilder builder =
-                new StringBuilder("§eMobs : ");
+                new StringBuilder("§eMobs : §f");
 
         for (EntityType mob : targetMobs) {
 
@@ -88,7 +88,7 @@ public class AnyMobChallenge implements Challenge {
                             .getMobName(mob)
             );
 
-            builder.append(" §7| ");
+            builder.append(" §f| ");
         }
 
         /*
