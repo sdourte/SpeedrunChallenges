@@ -130,12 +130,12 @@ public class MenuListener implements Listener {
         else if (event.getCurrentItem().getType() == Material.ENDER_PEARL) {
 
             /*
-             * DeathSwap nécessite exactement 2 joueurs.
+             * DeathSwap nécessite au moins 2 joueurs.
              */
-            if (Bukkit.getOnlinePlayers().size() != 2) {
+            if (Bukkit.getOnlinePlayers().size() < 2) {
 
                 player.sendMessage(
-                        "§cLe DeathSwap nécessite exactement 2 joueurs."
+                        "§cLe DeathSwap nécessite au moins 2 joueurs."
                 );
 
                 player.closeInventory();
