@@ -6,6 +6,7 @@ import me.simon.speedrunchallenges.game.GameState;
 import org.bukkit.Bukkit;
 
 import org.bukkit.boss.BossBar;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
@@ -44,7 +45,7 @@ public class AnyMobChallenge implements Challenge {
     @Override
     public String getObjective() {
 
-        return "Tuez 3 mobs différents";
+        return "Tuez 2 mobs différents";
     }
 
     @Override
@@ -107,10 +108,10 @@ public class AnyMobChallenge implements Challenge {
         /*
          * Retire dernier séparateur.
          */
-        if (builder.length() >= 3) {
+        if (builder.length() >= 2) {
 
             builder.setLength(
-                    builder.length() - 3
+                    builder.length() - 2
             );
         }
 
@@ -137,86 +138,75 @@ public class AnyMobChallenge implements Challenge {
          */
         EntityType[] possibleMobs = {
 
-                // Ferme / passifs
-                EntityType.PIG,
-                EntityType.COW,
-                EntityType.SHEEP,
-                EntityType.CHICKEN,
-                EntityType.HORSE,
-                EntityType.DONKEY,
-                EntityType.MULE,
-                EntityType.GOAT,
-                EntityType.RABBIT,
-                EntityType.CAMEL,
-                EntityType.LLAMA,
-                EntityType.TRADER_LLAMA,
-
-                // Village / PNJ
-                EntityType.VILLAGER,
-                EntityType.WANDERING_TRADER,
-
-                // Animaux sauvages
-                EntityType.WOLF,
-                EntityType.FOX,
-                EntityType.OCELOT,
-                EntityType.CAT,
-                EntityType.PARROT,
-                EntityType.PANDA,
-                EntityType.POLAR_BEAR,
-                EntityType.BEE,
-                EntityType.TURTLE,
-                EntityType.FROG,
+                // Passive
+                EntityType.ALLAY,
+                EntityType.ARMADILLO,
                 EntityType.AXOLOTL,
-
-                // Aquatiques
+                EntityType.BAT,
+                EntityType.CAMEL,
+                EntityType.CAT,
+                EntityType.CHICKEN,
                 EntityType.COD,
-                EntityType.SALMON,
-                EntityType.PUFFERFISH,
-                EntityType.TROPICAL_FISH,
-                EntityType.SQUID,
+                EntityType.COPPER_GOLEM,
+                EntityType.COW,
+                EntityType.DONKEY,
+                EntityType.FROG,
                 EntityType.GLOW_SQUID,
-                EntityType.DOLPHIN,
+                EntityType.HAPPY_GHAST,
+                EntityType.HORSE,
+                EntityType.MULE,
+                EntityType.OCELOT,
+                EntityType.PARROT,
+                EntityType.PIG,
+                EntityType.RABBIT,
+                EntityType.SALMON,
+                EntityType.SHEEP,
+                EntityType.SNOW_GOLEM,
+                EntityType.SQUID,
+                EntityType.STRIDER,
+                EntityType.TROPICAL_FISH,
+                EntityType.TURTLE,
+                EntityType.VILLAGER,
 
-                // Hostiles classiques
-                EntityType.ZOMBIE,
-                EntityType.HUSK,
-                EntityType.DROWNED,
-                EntityType.ZOMBIE_VILLAGER,
-
-                EntityType.SKELETON,
-                EntityType.STRAY,
-                EntityType.WITHER_SKELETON,
-
-                EntityType.CREEPER,
-                EntityType.SPIDER,
+                // Neutral
+                EntityType.BEE,
                 EntityType.CAVE_SPIDER,
-
+                EntityType.DOLPHIN,
+                EntityType.DROWNED,
                 EntityType.ENDERMAN,
-                EntityType.ENDERMITE,
-
-                EntityType.SLIME,
-                EntityType.MAGMA_CUBE,
-
-                EntityType.WITCH,
-                EntityType.SILVERFISH,
-
-                // Nether
-                EntityType.BLAZE,
-                EntityType.GHAST,
-                EntityType.HOGLIN,
-                EntityType.PIGLIN,
-
-                // Illagers
-                EntityType.PILLAGER,
-                EntityType.VINDICATOR,
-
-                // Aquatiques hostiles
-                EntityType.GUARDIAN,
-                EntityType.ELDER_GUARDIAN,
-
-                // Divers fun
+                EntityType.FOX,
+                EntityType.GOAT,
                 EntityType.IRON_GOLEM,
-                EntityType.SNOW_GOLEM
+                EntityType.LLAMA,
+                EntityType.NAUTILUS,
+                EntityType.PANDA,
+                EntityType.PIGLIN,
+                EntityType.POLAR_BEAR,
+                EntityType.PUFFERFISH,
+                EntityType.SPIDER,
+                EntityType.WOLF,
+
+                // Hostile
+                EntityType.BLAZE,
+                EntityType.BOGGED,
+                EntityType.BREEZE,
+                EntityType.CREAKING,
+                EntityType.CREEPER,
+                EntityType.ENDERMITE,
+                EntityType.GHAST,
+                EntityType.GUARDIAN,
+                EntityType.HOGLIN,
+                EntityType.HUSK,
+                EntityType.MAGMA_CUBE,
+                EntityType.PARCHED,
+                EntityType.PILLAGER,
+                EntityType.SKELETON,
+                EntityType.SLIME,
+                EntityType.STRAY,
+                EntityType.WITCH,
+                EntityType.WITHER_SKELETON,
+                EntityType.ZOMBIE,
+                EntityType.ZOMBIE_VILLAGER
         };
 
         /*
@@ -228,11 +218,10 @@ public class AnyMobChallenge implements Challenge {
         Collections.shuffle(shuffled);
 
         /*
-         * Garde uniquement 3 mobs.
+         * Garde uniquement 2 mobs.
          */
         targetMobs.add(shuffled.get(0));
         targetMobs.add(shuffled.get(1));
-        targetMobs.add(shuffled.get(2));
 
         /*
          * Affichage des objectifs.

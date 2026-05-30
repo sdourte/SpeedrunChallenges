@@ -63,51 +63,37 @@ public class MobKillChallenge implements Challenge {
         // Liste des mobs possibles
         EntityType[] possibleMobs = {
 
-                // Zombies
-                EntityType.ZOMBIE,
-                EntityType.HUSK,
-                EntityType.DROWNED,
-                EntityType.ZOMBIE_VILLAGER,
-
-                // Squelettes
-                EntityType.SKELETON,
-                EntityType.STRAY,
-                EntityType.WITHER_SKELETON,
-
-                // Creepers & araignées
-                EntityType.CREEPER,
-                EntityType.SPIDER,
+                // Neutral
                 EntityType.CAVE_SPIDER,
-
-                // Nether
-                EntityType.BLAZE,
-                EntityType.GHAST,
-                EntityType.MAGMA_CUBE,
-                EntityType.WITHER_SKELETON,
-                EntityType.PIGLIN,
-                EntityType.HOGLIN,
-
-                // End
+                EntityType.DROWNED,
                 EntityType.ENDERMAN,
+                EntityType.PIGLIN,
+                EntityType.POLAR_BEAR,
+                EntityType.PUFFERFISH,
+                EntityType.SPIDER,
+                EntityType.WOLF,
+
+                // Hostile
+                EntityType.BLAZE,
+                EntityType.BOGGED,
+                EntityType.BREEZE,
+                EntityType.CREAKING,
+                EntityType.CREEPER,
                 EntityType.ENDERMITE,
-
-                // Illagers
-                EntityType.PILLAGER,
-                EntityType.VINDICATOR,
-
-                // Slimes
-                EntityType.SLIME,
-
-                // Aquatiques hostiles
+                EntityType.GHAST,
                 EntityType.GUARDIAN,
-                EntityType.ELDER_GUARDIAN,
-
-                // Divers
+                EntityType.HOGLIN,
+                EntityType.HUSK,
+                EntityType.MAGMA_CUBE,
+                EntityType.PARCHED,
+                EntityType.PILLAGER,
+                EntityType.SKELETON,
+                EntityType.SLIME,
+                EntityType.STRAY,
                 EntityType.WITCH,
-                EntityType.SILVERFISH,
-
-                // Boss-lite / rares
-                EntityType.HOGLIN
+                EntityType.WITHER_SKELETON,
+                EntityType.ZOMBIE,
+                EntityType.ZOMBIE_VILLAGER
         };
 
         // Choix aléatoire

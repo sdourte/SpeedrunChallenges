@@ -95,9 +95,6 @@ public class DamageChallenge implements Challenge {
                 EntityDamageEvent.DamageCause.BLOCK_EXPLOSION,
                 EntityDamageEvent.DamageCause.ENTITY_EXPLOSION,
 
-                // Foudre
-                EntityDamageEvent.DamageCause.LIGHTNING,
-
                 // Contact
                 EntityDamageEvent.DamageCause.CONTACT, // cactus
 
@@ -116,15 +113,8 @@ public class DamageChallenge implements Challenge {
                 EntityDamageEvent.DamageCause.ENTITY_ATTACK,
                 EntityDamageEvent.DamageCause.PROJECTILE,
 
-                // Divers
-                EntityDamageEvent.DamageCause.THORNS,
-                EntityDamageEvent.DamageCause.CRAMMING,
-
                 // Respiration / environnement
                 EntityDamageEvent.DamageCause.SUFFOCATION,
-
-                // Électricité / trident
-                EntityDamageEvent.DamageCause.LIGHTNING,
 
                 // Sol dangereux
                 EntityDamageEvent.DamageCause.HOT_FLOOR
@@ -340,10 +330,6 @@ public class DamageChallenge implements Challenge {
 
             case PROJECTILE -> "Projectile";
 
-            case THORNS -> "Épines";
-
-            case CRAMMING -> "Écrasement (plein d'entités)";
-
             case SUFFOCATION -> "Suffocation";
 
             case DROWNING -> "Se noyer";
@@ -355,8 +341,6 @@ public class DamageChallenge implements Challenge {
 
             case ENTITY_EXPLOSION -> "Explosion (mob)";
             case BLOCK_EXPLOSION -> "Explosion (bloc)";
-
-            case LIGHTNING -> "Foudre";
 
             case CONTACT -> "Cactus";
 

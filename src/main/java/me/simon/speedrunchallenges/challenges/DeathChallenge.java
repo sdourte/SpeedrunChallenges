@@ -7,6 +7,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
 
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 
 import java.util.ArrayList;
@@ -77,7 +78,6 @@ public class DeathChallenge implements Challenge {
 
                 // Chute
                 DamageCause.FALL,
-                DamageCause.FALLING_BLOCK,
 
                 // Feu
                 DamageCause.FIRE,
@@ -89,31 +89,26 @@ public class DeathChallenge implements Challenge {
                 DamageCause.BLOCK_EXPLOSION,
                 DamageCause.ENTITY_EXPLOSION,
 
-                // Foudre
-                DamageCause.LIGHTNING,
-
                 // Contact
                 DamageCause.CONTACT, // cactus
+
+                // Faim (seulement ici car on ne peut pas mourir de faim)
+                DamageCause.STARVATION,
 
                 // Gel
                 DamageCause.FREEZE,
 
                 // Magie
                 DamageCause.MAGIC,
+                //(seulement ici car on ne peut pas mourir de poison)
+                DamageCause.POISON,
 
                 // Combat
                 DamageCause.ENTITY_ATTACK,
                 DamageCause.PROJECTILE,
 
-                // Divers
-                DamageCause.THORNS,
-                DamageCause.CRAMMING,
-
                 // Respiration / environnement
                 DamageCause.SUFFOCATION,
-
-                // Électricité / trident
-                DamageCause.LIGHTNING,
 
                 // Sol dangereux
                 DamageCause.HOT_FLOOR
@@ -176,10 +171,6 @@ public class DeathChallenge implements Challenge {
 
             case PROJECTILE -> "Projectile";
 
-            case THORNS -> "Épines";
-
-            case CRAMMING -> "Écrasement (plein d'entités)";
-
             case SUFFOCATION -> "Suffocation";
 
             case DROWNING -> "Se noyer";
@@ -191,8 +182,6 @@ public class DeathChallenge implements Challenge {
 
             case ENTITY_EXPLOSION -> "Explosion (mob)";
             case BLOCK_EXPLOSION -> "Explosion (bloc)";
-
-            case LIGHTNING -> "Foudre";
 
             case CONTACT -> "Cactus";
 

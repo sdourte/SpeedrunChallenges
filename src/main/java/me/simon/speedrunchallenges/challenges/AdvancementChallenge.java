@@ -72,7 +72,7 @@ public class AdvancementChallenge implements Challenge {
          */
         List<String> advancements = List.of(
 
-                // Début de jeu
+                // Story
                 "minecraft:story/mine_stone",
                 "minecraft:story/upgrade_tools",
                 "minecraft:story/smelt_iron",
@@ -80,58 +80,67 @@ public class AdvancementChallenge implements Challenge {
                 "minecraft:story/lava_bucket",
                 "minecraft:story/iron_tools",
                 "minecraft:story/deflect_arrow",
-
-                // Diamants / progression
+                "minecraft:story/form_obsidian",
                 "minecraft:story/mine_diamond",
                 "minecraft:story/shiny_gear",
                 "minecraft:story/enchant_item",
+                "minecraft:story/cure_zombie_villager",
+                "minecraft:story/enter_the_nether",
 
                 // Nether
-                "minecraft:story/enter_the_nether",
+                "minecraft:nether/return_to_sender",
                 "minecraft:nether/obtain_blaze_rod",
                 "minecraft:nether/find_fortress",
                 "minecraft:nether/ride_strider",
                 "minecraft:nether/loot_bastion",
+                "minecraft:nether/obtain_crying_obsidian",
+                "minecraft:nether/distract_piglin",
 
-                // Exploration
+                // Adventure
                 "minecraft:adventure/sleep_in_bed",
                 "minecraft:adventure/trade",
                 "minecraft:adventure/shoot_arrow",
                 "minecraft:adventure/kill_a_mob",
+                "minecraft:adventure/fall_from_world_height",
+                "minecraft:adventure/honey_block_slide",
+                "minecraft:adventure/voluntary_exile",
+                "minecraft:adventure/spyglass_at_parrot",
+                "minecraft:adventure/spyglass_at_ghast",
+                "minecraft:adventure/throw_trident",
+                "minecraft:adventure/walk_on_powder_snow_with_leather_boots",
+                "minecraft:adventure/use_lodestone",
+                "minecraft:adventure/read_power_of_chiseled_bookshelf",
+                "minecraft:adventure/trim_with_any_armor_pattern",
+                "minecraft:adventure/ol_betsy",
+                "minecraft:adventure/salvage_sherd",
+                "minecraft:adventure/avoid_vibration",
+                "minecraft:adventure/kill_mob_near_sculk_catalyst",
+                "minecraft:adventure/spear_many_mobs",
+                "minecraft:adventure/summon_iron_golem",
+                "minecraft:adventure/trade_at_world_height",
+                "minecraft:adventure/whos_the_pillager_now",
+                "minecraft:adventure/sniper_duel",
+                "minecraft:adventure/bullseye",
+                "minecraft:adventure/minecraft_trials_edition",
+                "minecraft:adventure/crafters_crafting_crafters",
+                "minecraft:adventure/brush_armadillo",
 
-                // Farming / nourriture
+                // Husbandry
                 "minecraft:husbandry/plant_seed",
                 "minecraft:husbandry/breed_an_animal",
                 "minecraft:husbandry/fishy_business",
                 "minecraft:husbandry/tame_an_animal",
-
-                // Fun / variés
-                "minecraft:adventure/fall_from_world_height",
-                "minecraft:adventure/honey_block_slide",
-                "minecraft:adventure/root",
-
-                // Divers
-                "minecraft:adventure/spyglass_at_parrot",
-                "minecraft:adventure/spyglass_at_ghast",
-
-                // Village
-                "minecraft:adventure/hero_of_the_village",
-
-                // Cuisine
                 "minecraft:husbandry/make_a_sign_glow",
-
-                // Utilisation objets
-                "minecraft:adventure/throw_trident",
-                "minecraft:adventure/very_very_frightening",
-
-                // Copper / récent
-                "minecraft:adventure/lightning_rod_with_villager_no_fire",
-
-                // Nether fun
-                "minecraft:nether/distract_piglin",
-
-                // Divers exploration
-                "minecraft:adventure/walk_on_powder_snow_with_leather_boots"
+                "minecraft:husbandry/play_jukebox_in_meadows",
+                "minecraft:husbandry/place_dried_ghast_in_water",
+                "minecraft:husbandry/safely_harvest_honey",
+                "minecraft:husbandry/ride_a_boat_with_a_goat",
+                "minecraft:husbandry/wax_on",
+                "minecraft:husbandry/tactical_fishing",
+                "minecraft:husbandry/wax_off",
+                "minecraft:husbandry/axolotl_in_a_bucket",
+                "minecraft:husbandry/repair_wolf_armor",
+                "minecraft:husbandry/remove_wolf_armor"
         );
         /*
          * Choix aléatoire.
@@ -200,7 +209,7 @@ public class AdvancementChallenge implements Challenge {
 
         return switch (key) {
 
-            // Début de jeu
+            // Story
             case "minecraft:story/mine_stone"
                     -> "Cassez de la pierre avec une pioche";
 
@@ -222,7 +231,9 @@ public class AdvancementChallenge implements Challenge {
             case "minecraft:story/deflect_arrow"
                     -> "Bloquez une flèche avec un bouclier";
 
-            // Diamants / progression
+            case "minecraft:story/form_obsidian"
+                    -> "Obtenez de l'obsidienne";
+
             case "minecraft:story/mine_diamond"
                     -> "Obtenez un diamant";
 
@@ -232,9 +243,15 @@ public class AdvancementChallenge implements Challenge {
             case "minecraft:story/enchant_item"
                     -> "Enchantez un objet";
 
-            // Nether
+            case "minecraft:story/cure_zombie_villager"
+                    -> "Soignez un zombie villageois";
+
             case "minecraft:story/enter_the_nether"
                     -> "Entrez dans le Nether";
+
+            // Nether
+            case "minecraft:nether/return_to_sender"
+                    -> "Renvoyez une boule de feu à un ghast";
 
             case "minecraft:nether/obtain_blaze_rod"
                     -> "Obtenez un bâton de blaze";
@@ -248,7 +265,13 @@ public class AdvancementChallenge implements Challenge {
             case "minecraft:nether/loot_bastion"
                     -> "Ouvrez un coffre de bastion";
 
-            // Exploration
+            case "minecraft:nether/obtain_crying_obsidian"
+                    -> "Obtenez de l'obsidienne pleureuse";
+
+            case "minecraft:nether/distract_piglin"
+                    -> "Distrayez un piglin avec de l'or";
+
+            // Adventure
             case "minecraft:adventure/sleep_in_bed"
                     -> "Dormez dans un lit";
 
@@ -261,7 +284,76 @@ public class AdvancementChallenge implements Challenge {
             case "minecraft:adventure/kill_a_mob"
                     -> "Tuez une créature hostile";
 
-            // Farming / nourriture
+            case "minecraft:adventure/fall_from_world_height"
+                    -> "Tombez depuis une très grande hauteur";
+
+            case "minecraft:adventure/honey_block_slide"
+                    -> "Glissez sur un bloc de miel";
+
+            case "minecraft:adventure/voluntary_exile"
+                    -> "Tuez un capitaine pillard";
+
+            case "minecraft:adventure/spyglass_at_parrot"
+                    -> "Regardez un perroquet avec une longue-vue";
+
+            case "minecraft:adventure/spyglass_at_ghast"
+                    -> "Regardez un ghast avec une longue-vue";
+
+            case "minecraft:adventure/throw_trident"
+                    -> "Lancez un trident";
+
+            case "minecraft:adventure/walk_on_powder_snow_with_leather_boots"
+                    -> "Marchez sur de la neige poudreuse avec des bottes en cuir";
+
+            case "minecraft:adventure/use_lodestone"
+                    -> "Utilisez une pierre de magnétite";
+
+            case "minecraft:adventure/read_power_of_chiseled_bookshelf"
+                    -> "Lisez un comparateur sur une bibliothèque sculptée";
+
+            case "minecraft:adventure/trim_with_any_armor_pattern"
+                    -> "Personnalisez une armure avec un modèle";
+
+            case "minecraft:adventure/ol_betsy"
+                    -> "Tirez avec une arbalète";
+
+            case "minecraft:adventure/salvage_sherd"
+                    -> "Obtenez un tesson de poterie";
+
+            case "minecraft:adventure/avoid_vibration"
+                    -> "Évitez de déclencher un capteur sculk";
+
+            case "minecraft:adventure/kill_mob_near_sculk_catalyst"
+                    -> "Tuez une créature près d'un catalyseur sculk";
+
+            case "minecraft:adventure/spear_many_mobs"
+                    -> "Transpercez plusieurs créatures avec un trident";
+
+            case "minecraft:adventure/summon_iron_golem"
+                    -> "Invoquez un golem de fer";
+
+            case "minecraft:adventure/trade_at_world_height"
+                    -> "Échangez avec un villageois à la hauteur maximale";
+
+            case "minecraft:adventure/whos_the_pillager_now"
+                    -> "Désarmez un pillard avec une arbalète";
+
+            case "minecraft:adventure/sniper_duel"
+                    -> "Tuez un squelette à grande distance";
+
+            case "minecraft:adventure/bullseye"
+                    -> "Touchez le centre d'une cible";
+
+            case "minecraft:adventure/minecraft_trials_edition"
+                    -> "Terminez une chambre des épreuves";
+
+            case "minecraft:adventure/crafters_crafting_crafters"
+                    -> "Fabriquez un crafter avec un crafter";
+
+            case "minecraft:adventure/brush_armadillo"
+                    -> "Brossez un tatou";
+
+            // Husbandry
             case "minecraft:husbandry/plant_seed"
                     -> "Plantez une graine";
 
@@ -274,49 +366,38 @@ public class AdvancementChallenge implements Challenge {
             case "minecraft:husbandry/tame_an_animal"
                     -> "Apprivoisez un animal";
 
-            // Fun / variés
-            case "minecraft:adventure/fall_from_world_height"
-                    -> "Tombez depuis une très grande hauteur";
-
-            case "minecraft:adventure/honey_block_slide"
-                    -> "Glissez sur un bloc de miel";
-
-            case "minecraft:adventure/root"
-                    -> "Entrez dans l'onglet aventure";
-
-            // Spyglass
-            case "minecraft:adventure/spyglass_at_parrot"
-                    -> "Regardez un perroquet avec une longue-vue";
-
-            case "minecraft:adventure/spyglass_at_ghast"
-                    -> "Regardez un ghast avec une longue-vue";
-
-            // Village
-            case "minecraft:adventure/hero_of_the_village"
-                    -> "Obtenez l'effet Héros du village";
-
-            // Cuisine / glow
             case "minecraft:husbandry/make_a_sign_glow"
                     -> "Utilisez une poche d'encre lumineuse sur un panneau";
 
-            // Trident / orage
-            case "minecraft:adventure/throw_trident"
-                    -> "Lancez un trident";
+            case "minecraft:husbandry/play_jukebox_in_meadows"
+                    -> "Faites jouer un jukebox dans une prairie";
 
-            case "minecraft:adventure/very_very_frightening"
-                    -> "Frappez un villageois avec la foudre";
+            case "minecraft:husbandry/place_dried_ghast_in_water"
+                    -> "Placez un ghast séché dans l'eau";
 
-            // Copper / lightning
-            case "minecraft:adventure/lightning_rod_with_villager_no_fire"
-                    -> "Protégez un villageois avec un paratonnerre";
+            case "minecraft:husbandry/safely_harvest_honey"
+                    -> "Récoltez du miel sans énerver les abeilles";
 
-            // Nether fun
-            case "minecraft:nether/distract_piglin"
-                    -> "Distrayez un piglin avec de l'or";
+            case "minecraft:husbandry/ride_a_boat_with_a_goat"
+                    -> "Naviguez avec une chèvre dans un bateau";
 
-            // Powder snow
-            case "minecraft:adventure/walk_on_powder_snow_with_leather_boots"
-                    -> "Marchez sur de la neige poudreuse avec des bottes en cuir";
+            case "minecraft:husbandry/wax_on"
+                    -> "Appliquez de la cire sur du cuivre";
+
+            case "minecraft:husbandry/tactical_fishing"
+                    -> "Attrapez un poisson avec un seau";
+
+            case "minecraft:husbandry/wax_off"
+                    -> "Retirez la cire d'un bloc de cuivre";
+
+            case "minecraft:husbandry/axolotl_in_a_bucket"
+                    -> "Capturez un axolotl dans un seau";
+
+            case "minecraft:husbandry/repair_wolf_armor"
+                    -> "Réparez une armure de loup";
+
+            case "minecraft:husbandry/remove_wolf_armor"
+                    -> "Retirez une armure de loup";
 
             default -> key;
         };
